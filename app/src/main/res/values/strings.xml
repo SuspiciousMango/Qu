@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Qu</string>
+    <string name="prompt_username">username</string>
+    <string name="prompt_password">password</string>
+    <string name="action_login">SIGN IN</string>
+    <string name="action_register">CREATE ACCOUNT</string>
+    <string name="text_create_account">"Don't have an account?\nCreate one here:"</string>
+</resources>
