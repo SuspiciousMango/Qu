@@ -1,8 +1,40 @@
+<!--
+    "prompt_" prefix is for any EditText hints
+    "text_ " prefix is for any TextView strings
+    "action_" prefix is for any text overlaid on buttons, etc.
+    -->
 <resources>
     <string name="app_name">Qu</string>
-    <string name="prompt_username">username</string>
-    <string name="prompt_password">password</string>
-    <string name="action_login">SIGN IN</string>
-    <string name="action_register">CREATE ACCOUNT</string>
-    <string name="text_create_account">"Don't have an account?\nCreate one here:"</string>
+    <!--Opening Screen-->
+        <string name="prompt_username">username</string>
+        <string name="prompt_password">password</string>
+        <string name="action_login">SIGN IN</string>
+        <string name="action_register">CREATE ACCOUNT</string>
+        <string name="text_create_account">"Don't have an account?\nCreate one here:"</string>
+    <!---->
+
+    <!--Account Creation-->
+        <string name="action_next">Next</string>
+
+        <string name="prompt_new_username">enter a unique username</string>
+        <string name="prompt_new_password">enter a password</string>
+        <string name="prompt_confirm_password">confirm password</string>
+
+        <string name="text_gender_preference">I prefer to study with</string>
+            <string name="action_male">males</string>
+            <string name="action_female">females</string>
+            <string name="action_anyone">anyone</string>
+        <string name="text_location_preference">I prefer studying in</string>
+            <string name="action_jc">the JC</string>
+            <string name="action_fenwick">Fenwick</string>
+            <string name="action_mix">the MIX</string>
+            <string name="action_engineering">the Engineering Building</string>
+            <string name="action_dorm">my own dorm room/apartment/home</string>
+        <string name="text_method_preference">I study by</string>
+            <string name="action_flashcards">making and reviewing flashcards</string>
+            <string name="action_practice_problems">going over practice problems</string>
+            <string name="action_lecture">reviewing lecture slides/textbook chapters</string>
+            <string name="action_ta">visiting the TA/professor during office hours</string>
+            <string name="action_other">all of the above/other</string>
+    <!---->
 </resources>

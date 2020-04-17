@@ -2,6 +2,7 @@ package com.team5.qu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Sign In method created by Jayson
+     * Sign In method created by Jayson and edited by
      * Called when the user clicks the sign-in button
      */
     public void login(View v) {
@@ -38,5 +39,14 @@ public class MainActivity extends AppCompatActivity {
         else {
             loginError.show();
         }
+    }
+
+    /**
+     * Create account method created by Jayson and edited by
+     * Called when the user clicks the create account button
+     */
+    public void createAccount(View v) {
+        Intent createAcc = new Intent(this, UsernameActivity.class);
+        startActivity(createAcc);
     }
 }
