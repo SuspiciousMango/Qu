@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My name is"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="60dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="101dp" />
+
+
+
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:text="Continue"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="156dp"
+        tools:layout_editor_absoluteY="656dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My email is"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="382dp" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="423dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My phone number is"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="520dp" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="561dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My gender is"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="199dp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+    <RadioButton
+        android:id="@+id/female"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="female"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="272dp" />
+
+    <RadioButton
+        android:id="@+id/male"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="male"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="240dp" />
+
+    <RadioButton
+        android:id="@+id/pns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I prefer not to say"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="304dp" />
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
