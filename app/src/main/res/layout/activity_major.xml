@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -11,19 +11,10 @@
         android:layout_height="wrap_content"
         android:text="My major is"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="71dp" />
-
-    <EditText
-        android:id="@+id/editText6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text=""
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="112dp" />
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView12"
@@ -31,59 +22,76 @@
         android:layout_height="wrap_content"
         android:text="My year is"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="237dp" />
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
+        android:id="@+id/radioGroup2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.522">
 
         <RadioButton
             android:id="@+id/freshman"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="freshman"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="68dp"
-            tools:layout_editor_absoluteY="278dp" />
+            android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/sophomore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="sophomore"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="68dp"
-            tools:layout_editor_absoluteY="310dp" />
+            android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/junior"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="junior"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="68dp"
-            tools:layout_editor_absoluteY="342dp" />
+            android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/senior"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="senior"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="68dp"
-            tools:layout_editor_absoluteY="374dp" />
-                                                />
+            android:textSize="20sp" />
+    </RadioGroup>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Continue"
-        android:textSize="20sp"
         android:background="@android:color/white"
-        tools:layout_editor_absoluteX="156dp"
-        tools:layout_editor_absoluteY="656dp"  />
+        android:text="@string/action_next"
+        android:onClick="onNextClick"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="347dp"
+        android:layout_height="38dp"
+        android:entries="@array/majors_array"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.239" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

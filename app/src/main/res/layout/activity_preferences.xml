@@ -34,14 +34,14 @@
             android:id="@+id/males"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/action_male"
+            android:text="@string/action_males"
             android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/females"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/action_female"
+            android:text="@string/action_females"
             android:textSize="20sp" />
 
         <RadioButton
@@ -170,11 +170,12 @@
         app:layout_constraintTop_toBottomOf="@+id/checkBox8" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
         android:text="@string/action_next"
+        android:onClick="onNextClick"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
