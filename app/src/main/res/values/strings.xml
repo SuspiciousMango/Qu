@@ -50,12 +50,216 @@
 
     <!--Majors String Array-->
     <string-array name="majors_array">
-        <item>Computer Science</item>
-        <item>Math</item>
-        <item>Business</item>
-        <item>Biology</item>
+
+        <item>Accounting (BS)</item>
+        <item>Anthropology (BA)</item>
+        <item>Applied Computer Science (BS): Bioinformatics</item>
+        <item>Applied Computer Science (BS): Computer Game Design</item>
+        <item>Applied Computer Science (BS): Geography</item>
+        <item>Applied Computer Science (BS): Software Engineering</item>
+        <item>Art History (BA)</item>
+        <item>Art and Visual Technology (BA): All Other Concentrations</item>
+        <item>Art and Visual Technology (BA): Graphic Design</item>
+        <item>Art and Visual Technology (BFA): All Other Concentrations</item>
+        <item>Art and Visual Technology (BFA):Graphic Design</item>
+        <item>Astronomy (BS)</item>
+        <item>Atmospheric Sciences (BS)</item>
+        <item>Bioengineering (BS): Healthcare Informatics</item>
+        <item>Bioengineering (BS): Neurotechnology and Computational Neuroscience</item>
+        <item>Bioengineering (BS): Biomedical Imaging and Devices</item>
+        <item>Bioengineering (BS): Prehealth</item>
+        <item>Bioengineering (BS): Computational Biomedical Engineering</item>
+        <item>Bioengineering (BS): Biomaterials and Nanomedicine</item>
+        <item>Biology (BA)</item>
+        <item>Biology (BS): Bioinformatics</item>
+        <item>Biology (BS): Biopsychology</item>
+        <item>Biology (BS): Biotechnology and Molecular Biology</item>
+        <item>Biology (BS): Environmental and Conservation Biology</item>
+        <item>Biology (BS): Microbiology</item>
+        <item>Biology (BS)</item>
+        <item>Chemistry (BA): Biochemistry</item>
+        <item>Chemistry (BA)</item>
+        <item>Chemistry (BS): Analytical Chemistry</item>
+        <item>Chemistry (BS): Biochemistry</item>
+        <item>Chemistry (BS): Environmental Chemistry</item>
+        <item>Chemistry (BS)</item>
+        <item>Civil and Infrastructure Engineering (BS)</item>
+        <item>Communications (BA)</item>
+        <item>Community Health (BS): Clinical Sciences (Pre Pharmacy)</item>
+        <item>Community Health (BS): Clinical Sciences (Pre Med)</item>
+        <item>Community Health (BS): Clinical Sciences (Pre Dental or Optometry</item>
+        <item>Community Health (BS): Clinical Sciences (Pre Physical Therapy)</item>
+        <item>Community Health (BS): Clinical Sciences (Pre Physician Assistant)</item>
+        <item>Community Health (BS): Global Health</item>
+        <item>Community Health (BS): Clinical Sciences (Pre-Occupational Therapy)</item>
+        <item>Community Health (BS)</item>
+        <item>Computational and Data Sciences (BS)</item>
+        <item>Computer Engineering (BS): Computer Networks</item>
+        <item>Computer Engineering (BS): Robotics</item>
+        <item>Computer Engineering (BS): Embedded Systems</item>
+        <item>Computer Engineering (BS): Hardware and Security Systems</item>
+        <item>Computer Engineering (BS): Internet of Things</item>
+        <item>Computer Game Design (BFA)</item>
+        <item>Computer Science (BS)</item>
+        <item>Conflict Analysis and Resolution (BA)</item>
+        <item>Conflict Analysis and Resolution (BS)</item>
+        <item>Creative Writing (BFA)</item>
+        <item>Criminology, Law and Society (BA)</item>
+        <item>Criminology, Law and Society (BS)</item>
+        <item>Cyber Security Engineering (BS)</item>
+        <item>Dance (BA)</item>
+        <item>Dance (BFA)</item>
+        <item>Early Childhood Education for Diverse Learners, without Concentration (BSEd)</item>
+        <item>Early Childhood Education for Diverse Learners (BSEd): Early Childhood Special Education Licensure</item>
+        <item>Early Childhood Education for Diverse Learners (BSEd): Early/Primary Education PreK-3 Licensure</item>
+        <item>Early Childhood Education for Diverse Learners (BSEd): Dual Licensure</item>
+        <item>Earth Science (BS): Earth Surface Processes</item>
+        <item>Earth Science (BS): Environmental Geoscience</item>
+        <item>Earth Science (BS): Geology</item>
+        <item>Earth Science (BS): Oceanography and Estuarine Science</item>
+        <item>Earth Science (BS): Paleontology</item>
+        <item>Economics (BA): Philosophy, Politics, and Economics</item>
+        <item>Economics (BA)</item>
+        <item>Economics (BS): Managerial Economics</item>
+        <item>Economics (BS): Philosophy, Politics, and Economics</item>
+        <item>Economics (BS)</item>
+        <item>Electrical Engineering (BS): Communications and Signal Processing</item>
+        <item>Electrical Engineering (BS): Computer Engineering</item>
+        <item>Electrical Engineering (BS): Control Systems</item>
+        <item>Electrical Engineering (BS): Electronics</item>
+        <item>Elementary Education, PK-6 Licensure (Bsed)</item>
+        <item>English (BA)</item>
+        <item>Environmental Science (BS): Conservation</item>
+        <item>Environmental Science (BS): Ecological Science</item>
+        <item>Environmental Science (BS): Environmental Health</item>
+        <item>Environmental Science (BS): Human and Ecosystem Response to Climate Change</item>
+        <item>Environmental Science (BS): Marine, Estuarine, and Freshwater Ecology</item>
+        <item>Environmental Science (BS): Wildlife</item>
+        <item>Environmental and Sustainability Studies (BA)</item>
+        <item>Film and Video Studies (BA): Directing</item>
+        <item>Film and Video Studies (BA): Screenwriting</item>
+        <item>Film and Video Studies (BA): Production and Post Production</item>
+        <item>Film and Video Studies (BA): Production</item>
+        <item>Finance (BS)</item>
+        <item>Foreign Languages (BA): Arabic</item>
+        <item>Foreign Languages (BA): Chinese</item>
+        <item>Foreign Languages (BA): French</item>
+        <item>Foreign Languages (BA): Spanish</item>
+        <item>Foreign Languages (BA): Korean</item>
+        <item>Forensic Science (BS)</item>
+        <item>Geography (BA): No Concentration</item>
+        <item>Geography (BA): Environmental Geography</item>
+        <item>Geography (BA): Geoanthropology</item>
+        <item>Geography (BA): Health Geography</item>
+        <item>Geography (BS)</item>
+        <item>Geology (BA)</item>
+        <item>Global Affairs (BA)</item>
+        <item>Government and International Politics (BA): Philosophy, Politics, and Economics</item>
+        <item>Government and International Politics (BA)</item>
+        <item>Health Administration (BS): Assisted Living/Senior Housing Administration</item>
+        <item>Health Administration (BS): Health Informatics</item>
+        <item>Health Administration (BS): Health Systems Management</item>
+        <item>Health, Fitness, and Recreation Resources (BS): Parks and Outdoor Recreation</item>
+        <item>Health, Fitness, and Recreation Resources (BS): Sport Management</item>
+        <item>Health, Fitness, and Recreation Resources (BS): Therapeutic Recreation</item>
+        <item>History (BA): Digital History</item>
+        <item>History (BA): Global History</item>
+        <item>History (BA): Individualized</item>
+        <item>History (BA): No Concentration</item>
+        <item>History (BA): Public History</item>
+        <item>History (BA): U.S. History</item>
+        <item>Human Development and Family Science (BA): Adolescent Development and Services</item>
+        <item>Human Development and Family Science (BA): Adult Development and Agings</item>
+        <item>Human Development and Family Science (BA): Child Development, Education, and Services</item>
+        <item>Human Development and Family Science (BA): Family Health and Well Being</item>
+        <item>Human Development and Family Science (BA): Family Research, Policy, and Advocacy</item>
+        <item>Individualized Study (BIS)</item>
+        <item>Information Systems and Operations Management (BS)</item>
+        <item>Information Technology (BS)</item>
+        <item>Integrative Studies (BA): Childhood Studies</item>
+        <item>Integrative Studies (BA or BS): Individualized Concentration</item>
+        <item>Integrative Studies (BA): International Studies</item>
+        <item>Integrative Studies (BA): Leadership and Organizational Development</item>
+        <item>Integrative Studies (BA): Legal Studies</item>
+        <item>Integrative Studies (BA): Liberal Arts for the Teaching Professions</item>
+        <item>Integrative Studies (BA): Social innovation and Enterprise</item>
+        <item>Integrative Studies (BA): Social Justice and Human Rights</item>
+        <item>Integrative Studies (BA): Social Science for Education</item>
+        <item>Integrative Studies (BA):Women and Gender Studies Concentration</item>
+        <item>Integrative Studies (BS): Applied Global Conservation</item>
+        <item>Integrative Studies (BS): Life Sciences: Pre-Med</item>
+        <item>Integrative Studies (BS): Life Sciences: Pre-Dental</item>
+        <item>Integrative Studies (BS): Life Sciences: Pre-Pharmacy</item>
+        <item>Integrative Studies (BS): Life Sciences: Pre-Occupational Therapy</item>
+        <item>Integrative Studies (BS): Life Sciences: Pre-Physical Therapy</item>
+        <item>Integrative Studies (BS): Life Sciences: Pre-Physicians Assistant</item>
+        <item>Kinesiology (BS)</item>
+        <item>Management (BS)</item>
+        <item>Marketing (BS)</item>
+        <item>Mathematics (BA): Traditional Mathematics</item>
+        <item>Mathematics (BS): Actuarial Mathematics</item>
+        <item>Mathematics (BS): Applied Mathematics</item>
+        <item>Mathematics (BS): Mathematical Statistics</item>
+        <item>Mathematics (BS): Traditional Mathematics</item>
+        <item>Mechanical Engineering (BS)</item>
+        <item>Medical Laboratory Science (BS)</item>
+        <item>Music (BA): Music Technology</item>
+        <item>Music (BA)</item>
+        <item>Music (BM): Choral Education</item>
+        <item>Music (BM): Composition</item>
+        <item>Music (BM): Jazz</item>
+        <item>Music (BM): Keyboard</item>
+        <item>Music (BM): Music Education</item>
+        <item>Music (BM): Music Pedagogy</item>
+        <item>Music (BM): Music Technology - Electroacoustic</item>
+        <item>Music (BM): Music Technology - Engineering</item>
+        <item>Music (BM): Music Technology - Recording</item>
+        <item>Music (BM): Performance</item>
+        <item>Neuroscience (BS)</item>
+        <item>Nursing: Traditional Track (BSN)</item>
+        <item>Philosophy (BA): Philosophy and Law</item>
+        <item>Philosophy (BA): Philosophy, Politics, and Economics</item>
+        <item>Philosophy (BA)</item>
+        <item>Physical Education (BSEd)</item>
+        <item>Physics (BS): Applied and Engineering Physics Concentration</item>
+        <item>Physics (BS): Astrophysics Concentration</item>
+        <item>Physics (BS): Computational Physics Concentration</item>
+        <item>Physics (BS)</item>
+        <item>Psychology (BA)</item>
+        <item>Psychology (BS)</item>
+        <item>Public Administration (BS)</item>
+        <item>Rehabilitation Science (BS)</item>
+        <item>Religious Studies (BA)</item>
+        <item>Russian and Eurasian Studies (BA): Eurasian Studies</item>
+        <item>Russian and Eurasian Studies (BA): Russian Language and Cultures</item>
+        <item>Russian and Eurasian Studies (BA): Russian Studies</item>
+        <item>Social Work (BSW)</item>
+        <item>Sociology (BA)</item>
+        <item>Special Education (Bsed): No Concentration</item>
+        <item>Special Education (Bsed): General</item>
+        <item>Special Education (Bsed): Blindness and Visual Impairments</item>
+        <item>Special Education (Bsed): Adapted K-12 Licensure</item>
+        <item>Statistics (BS)</item>
+        <item>Undeclared Engineering</item>
+        <item>Systems Engineering (BS)</item>
+        <item>Theater (BA): Education</item>
+        <item>Theater (BA)</item>
+        <item>Theater (BFA)</item>
+        <item>Hospitality, Tourism and Events Management (BS): Events Management</item>
+        <item>Hospitality, Tourism and Events Management (BS): Hospitality Management</item>
+        <item>Hospitality, Tourism and Events Management (BS): Tourism Management</item>
         <item>null</item>
     </string-array>
 
     <!---->
+    <!-- Time strings -->
+    <string name="text_time_preference">I can study during the following times</string>
+    <string name="text_time_monday">M</string>
+    <string name="text_time_tuesday">T</string>
+    <string name="text_time_wednesday">W</string>
+    <string name="text_time_thursday">Th</string>
+    <string name="text_time_friday">F</string>
+    <string name="text_time_saturday">Sa</string>
+    <string name="text_time_sunday">Su</string>
+
 </resources>

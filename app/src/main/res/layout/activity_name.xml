@@ -17,6 +17,7 @@
         app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
@@ -24,13 +25,13 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
-        android:textSize="30dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19999999" />
-
+        app:layout_constraintVertical_bias="0.214" />
 
     <Button
         android:id="@+id/next"
@@ -61,11 +62,13 @@
         android:id="@+id/editText5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:textSize="30dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/textView10"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -85,12 +88,13 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="phone"
-        android:textSize="30dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintVertical_bias="0.81" />
 
     <TextView
         android:id="@+id/textView14"
@@ -119,20 +123,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/action_male"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <RadioButton
             android:id="@+id/female"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/action_female"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <RadioButton
             android:id="@+id/pns"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/action_pns"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
     </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>
