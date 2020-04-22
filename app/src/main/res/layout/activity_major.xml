@@ -9,32 +9,38 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="My major is"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:text="@string/text_major"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_major"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="My year is"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:text="@string/text_year"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
         android:id="@+id/radioGroup2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.522">
 
@@ -42,28 +48,28 @@
             android:id="@+id/freshman"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="freshman"
+            android:text="@string/action_freshman"
             android:textSize="15sp" />
 
         <RadioButton
             android:id="@+id/sophomore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="sophomore"
+            android:text="@string/action_sophomore"
             android:textSize="15sp" />
 
         <RadioButton
             android:id="@+id/junior"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="junior"
+            android:text="@string/action_junior"
             android:textSize="15sp" />
 
         <RadioButton
             android:id="@+id/senior"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="senior"
+            android:text="@string/action_senior"
             android:textSize="15sp" />
     </RadioGroup>
 
@@ -82,14 +88,16 @@
         app:layout_constraintVertical_bias="0.95" />
 
     <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="347dp"
-        android:layout_height="38dp"
+        android:id="@+id/spinner_major"
+        android:layout_width="301dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:entries="@array/majors_array"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.406"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView11"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.239" />
 

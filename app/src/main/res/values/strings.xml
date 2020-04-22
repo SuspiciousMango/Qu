@@ -29,6 +29,11 @@
     <string name="text_phone">My phone number is</string>
 
     <string name="text_major">My major is</string>
+    <string name="text_year">I am a</string>
+    <string name="action_freshman">freshman</string>
+    <string name="action_sophomore">sophomore</string>
+    <string name="action_junior">junior</string>
+    <string name="action_senior">senior</string>
 
     <string name="text_gender_preference">I prefer to study with</string>
     <string name="action_males">males</string>
@@ -46,11 +51,73 @@
     <string name="action_lecture">reviewing lecture slides/textbook chapters</string>
     <string name="action_ta">visiting the TA/professor during office hours</string>
     <string name="action_other">all of the above/other</string>
-    <!---->
 
-    <!--Majors String Array-->
+    <string name="text_class_select">Please choose up to 6 classes that you wish to look for study partners for</string>
+    <string name="text_class_1">Class 1</string>
+    <string name="text_class_2">Class 2</string>
+    <string name="text_class_3">Class 3</string>
+    <string name="text_class_4">Class 4</string>
+    <string name="text_class_5">Class 5</string>
+    <string name="text_class_6">Class 6</string>
+
+    <string name="text_time_preference">I can study during the following times</string>
+    <string name="text_time_dayofWeek">"M       T       W      Th       F      Sa       Su"</string>
+    <string name="eightAM">8 - 11 AM</string>
+    <string name="elevenAM">11AM - 2PM</string>
+    <string name="twoPM">2 - 5 PM</string>
+    <string name="fivePM"> 5 - 8 PM</string>
+    <string name="eightPM"> 8 - 11 PM</string>
+
+    <string-array name="classes_CS_array">
+        <item>none</item>
+        <item>CS 100</item>
+        <item>CS 101</item>
+        <item>CS 105</item>
+        <item>CS 110</item>
+        <item>CS 112</item>
+        <item>CS 211</item>
+        <item>CS 222</item>
+        <item>CS 262</item>
+        <item>CS 306</item>
+        <item>CS 310</item>
+        <item>CS 321</item>
+        <item>CS 325</item>
+        <item>CS 330</item>
+        <item>CS 332</item>
+        <item>CS 351</item>
+        <item>CS 367</item>
+        <item>CS 390</item>
+        <item>CS 391</item>
+        <item>CS 395</item>
+        <item>CS 399</item>
+        <item>CS 425</item>
+        <item>CS 426</item>
+        <item>CS 440</item>
+        <item>CS 444</item>
+        <item>CS 445</item>
+        <item>CS 450</item>
+        <item>CS 451</item>
+        <item>CS 455</item>
+        <item>CS 463</item>
+        <item>CS 465</item>
+        <item>CS 468</item>
+        <item>CS 469</item>
+        <item>CS 471</item>
+        <item>CS 475</item>
+        <item>CS 477</item>
+        <item>CS 480</item>
+        <item>CS 482</item>
+        <item>CS 483</item>
+        <item>CS 484</item>
+        <item>CS 485</item>
+        <item>CS 490</item>
+        <item>CS 491</item>
+        <item>CS 498</item>
+        <item>CS 499</item>
+    </string-array>
+
     <string-array name="majors_array">
-
+        <item>none</item>
         <item>Accounting (BS)</item>
         <item>Anthropology (BA)</item>
         <item>Applied Computer Science (BS): Bioinformatics</item>
@@ -250,16 +317,7 @@
         <item>Hospitality, Tourism and Events Management (BS): Tourism Management</item>
         <item>null</item>
     </string-array>
-
     <!---->
-    <!-- Time strings -->
-    <string name="text_time_preference">I can study during the following times</string>
-    <string name="text_time_dayofWeek">"M       T       W      Th       F      Sa       Su"</string>
-    <string name="eightAM"> 8 - 11 AM</string>
-    <string name="elevenAM"> 11 - 2 PM</string>
-    <string name="twoPM"> 2 - 5 PM</string>
-    <string name="fivePM"> 5 - 8 PM</string>
-    <string name="eightPM"> 8 - 11 PM</string>
 
 
 </resources>
