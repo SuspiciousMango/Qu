@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_class_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_class_6"
+        app:layout_constraintBottom_toTopOf="@+id/class_6"
+        app:layout_constraintEnd_toEndOf="@+id/class_6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/class_6" />
+
+    <TextView
+        android:id="@+id/text_class_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_class_3"
+        app:layout_constraintBottom_toTopOf="@+id/class_3"
+        app:layout_constraintEnd_toEndOf="@+id/class_3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/class_3" />
+
+    <TextView
+        android:id="@+id/text_class_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_class_4"
+        app:layout_constraintBottom_toTopOf="@+id/class_4"
+        app:layout_constraintEnd_toEndOf="@+id/class_4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/class_4" />
+
+    <TextView
+        android:id="@+id/text_class_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_class_5"
+        app:layout_constraintBottom_toTopOf="@+id/class_5"
+        app:layout_constraintEnd_toEndOf="@+id/class_5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/class_5" />
+
+    <TextView
+        android:id="@+id/text_class_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_class_2"
+        app:layout_constraintBottom_toTopOf="@+id/class_2"
+        app:layout_constraintEnd_toEndOf="@+id/class_2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/class_2" />
+
+    <TextView
+        android:id="@+id/text_class_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_class_1"
+        app:layout_constraintBottom_toTopOf="@+id/class_1"
+        app:layout_constraintEnd_toEndOf="@+id/class_1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/class_1" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:onClick="onNextClick"
+        android:text="@string/action_next"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <TextView
+        android:id="@+id/class_select"
+        android:layout_width="241dp"
+        android:layout_height="36dp"
+        android:text="@string/text_class_select"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <Spinner
+        android:id="@+id/class_1"
+        android:layout_width="201dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:entries="@array/classes_CS_array"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/class_select" />
+
+    <Spinner
+        android:id="@+id/class_2"
+        android:layout_width="201dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:entries="@array/classes_CS_array"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/class_1" />
+
+    <Spinner
+        android:id="@+id/class_3"
+        android:layout_width="201dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:entries="@array/classes_CS_array"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/class_2" />
+
+    <Spinner
+        android:id="@+id/class_4"
+        android:layout_width="201dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:entries="@array/classes_CS_array"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/class_3" />
+
+    <Spinner
+        android:id="@+id/class_5"
+        android:layout_width="201dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:entries="@array/classes_CS_array"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/class_4" />
+
+    <Spinner
+        android:id="@+id/class_6"
+        android:layout_width="201dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:entries="@array/classes_CS_array"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/class_5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
