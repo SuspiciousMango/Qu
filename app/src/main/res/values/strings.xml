@@ -254,12 +254,12 @@
     <!---->
     <!-- Time strings -->
     <string name="text_time_preference">I can study during the following times</string>
-    <string name="text_time_monday">M</string>
-    <string name="text_time_tuesday">T</string>
-    <string name="text_time_wednesday">W</string>
-    <string name="text_time_thursday">Th</string>
-    <string name="text_time_friday">F</string>
-    <string name="text_time_saturday">Sa</string>
-    <string name="text_time_sunday">Su</string>
+    <string name="text_time_dayofWeek">"M       T       W      Th       F      Sa       Su"</string>
+    <string name="eightAM"> 8 - 11 AM</string>
+    <string name="elevenAM"> 11 - 2 PM</string>
+    <string name="twoPM"> 2 - 5 PM</string>
+    <string name="fivePM"> 5 - 8 PM</string>
+    <string name="eightPM"> 8 - 11 PM</string>
+
 
 </resources>
