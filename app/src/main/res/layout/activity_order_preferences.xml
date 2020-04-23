@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="When chosing a study partner, these preferences matter:"
+        android:textSize="15sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="31dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="First Preference"
+        android:textSize="15sp"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="145dp" />
+
+    <Spinner
+        android:id="@+id/preference1"
+        android:layout_width="201dp"
+        android:layout_height="40dp"
+        android:entries="@array/order_preferences"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="165dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Second Preference"
+        android:textSize="15sp"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="227dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Third Preference"
+        android:textSize="15sp"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="313dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fourth Preference"
+        android:textSize="15sp"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="410dp" />
+
+    <Spinner
+        android:id="@+id/preference2"
+        android:layout_width="201dp"
+        android:layout_height="40dp"
+        android:entries="@array/order_preferences"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="247dp" />
+
+    <Spinner
+        android:id="@+id/preference3"
+        android:layout_width="201dp"
+        android:layout_height="40dp"
+        android:entries="@array/order_preferences"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="333dp" />
+
+    <Spinner
+        android:id="@+id/preference4"
+        android:layout_width="201dp"
+        android:layout_height="40dp"
+        android:entries="@array/order_preferences"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="430dp" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:onClick="onNextClick"
+        android:text="@string/action_next"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="612dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
