@@ -24,7 +24,7 @@ public class AccountCreateActivity extends AppCompatActivity {
     private String newPhoneNum;
     private String newMajor;
     private char newYear;
-    private ArrayList<String> classes;
+    private ArrayList<String> courses;
     private char newGenderPreference;
     private String newLocations;
     private String newTechniques;
@@ -216,30 +216,30 @@ public class AccountCreateActivity extends AppCompatActivity {
             String tempClass5 = ((String)(class5.getSelectedItem())).trim();
             String tempClass6 = ((String)(class6.getSelectedItem())).trim();
             String tempClass7 = ((String)(class7.getSelectedItem())).trim();
-            classes = new ArrayList<String>();
+            courses = new ArrayList<String>();
             boolean classFlag = false;
             if(!tempClass1.equals("none")) {
-                classes.add(tempClass1);
+                courses.add(tempClass1);
             }
             if(!tempClass2.equals("none")) {
-                classes.add(tempClass2);
+                courses.add(tempClass2);
             }
             if(!tempClass3.equals("none")) {
-                classes.add(tempClass3);
+                courses.add(tempClass3);
             }
             if(!tempClass4.equals("none")) {
-                classes.add(tempClass4);
+                courses.add(tempClass4);
             }
             if(!tempClass5.equals("none")) {
-                classes.add(tempClass5);
+                courses.add(tempClass5);
             }
             if(!tempClass6.equals("none")) {
-                classes.add(tempClass6);
+                courses.add(tempClass6);
             }
             if(!tempClass7.equals("none")) {
-                classes.add(tempClass7);
+                courses.add(tempClass7);
             }
-            if(classes.size() == 0){
+            if(courses.size() == 0){
                 noClassSelectedError.show();
             }
             else{
