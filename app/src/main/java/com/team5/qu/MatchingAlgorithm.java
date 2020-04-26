@@ -87,8 +87,8 @@ class MatchingAlgorithm
                                     matchRating += 1 * ((requestPreference.size()+1)-requestPreference.get(i).getWeight());
                                 break;
                             case 1:
-                                String[] requestingUserTimes = requestPreference.get(i).getChosenOptions().split(".");
-                                String[] otherUserTimes = otherPreferences.get(i).getChosenOptions().split(".");
+                                String[] requestingUserTimes = requestPreference.get(i).getChosenOptions().split(",");
+                                String[] otherUserTimes = otherPreferences.get(i).getChosenOptions().split(",");
                                 int j;
                                 /*
                                     Both the arrays should be of size 7, where each entry is the available times
@@ -105,15 +105,15 @@ class MatchingAlgorithm
                                 {
                                     String requestingUserDay = requestingUserTimes[j];
                                     String otherUserDay = otherUserTimes[j];
-                                    int[] findRequestingCommonTimes = new int[5];
-                                    int[] findOtherCommonTimes = new int[5];
+                                    int[] findRequestingCommonTimes = new int[4];
+                                    int[] findOtherCommonTimes = new int[4];
                                     for (int k = 0; k < requestingUserDay.length(); k++)
                                     {
-                                        findRequestingCommonTimes[(requestingUserDay.charAt(i) - '0')]++;
+                                        findRequestingCommonTimes[(requestingUserDay.charAt(k) - '1')]++;
                                     }
                                     for (int k = 0; k < otherUserDay.length(); k++)
                                     {
-                                        findOtherCommonTimes[(otherUserDay.charAt(i) - '0')]++;
+                                        findOtherCommonTimes[(otherUserDay.charAt(k) - '1')]++;
                                     }
                                     for (int k = 0; k < findRequestingCommonTimes.length; k++)
                                     {
