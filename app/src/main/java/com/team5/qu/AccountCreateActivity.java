@@ -396,149 +396,149 @@ public class AccountCreateActivity extends AppCompatActivity {
             String tempTimes = "";
             boolean timeFlag = false;
             if(m1.isChecked()){
-                tempTimes += "1";
+                tempTimes += "0";
                 timeFlag = true;
             }
             if(m2.isChecked()){
-                tempTimes += "2";
+                tempTimes += "1";
                 timeFlag = true;
             }
             if(m3.isChecked()){
-                tempTimes += "3";
+                tempTimes += "2";
                 timeFlag = true;
             }
             if(m4.isChecked()){
-                tempTimes += "4";
+                tempTimes += "3";
                 timeFlag = true;
             }
             if(m5.isChecked()){
-                tempTimes += "5";
+                tempTimes += "4";
                 timeFlag = true;
             }
             tempTimes += ".";
             if(t1.isChecked()){
-                tempTimes += "1";
+                tempTimes += "0";
                 timeFlag = true;
             }
             if(t2.isChecked()){
-                tempTimes += "2";
+                tempTimes += "1";
                 timeFlag = true;
             }
             if(t3.isChecked()){
-                tempTimes += "3";
+                tempTimes += "2";
                 timeFlag = true;
             }
             if(t4.isChecked()){
-                tempTimes += "4";
+                tempTimes += "3";
                 timeFlag = true;
             }
             if(t5.isChecked()){
-                tempTimes += "5";
+                tempTimes += "4";
                 timeFlag = true;
             }
             tempTimes += ".";
             if(w1.isChecked()){
-                tempTimes += "1";
+                tempTimes += "0";
                 timeFlag = true;
             }
             if(w2.isChecked()){
-                tempTimes += "2";
+                tempTimes += "1";
                 timeFlag = true;
             }
             if(w3.isChecked()){
-                tempTimes += "3";
+                tempTimes += "2";
                 timeFlag = true;
             }
             if(w4.isChecked()){
-                tempTimes += "4";
+                tempTimes += "3";
                 timeFlag = true;
             }
             if(w5.isChecked()){
-                tempTimes += "5";
+                tempTimes += "4";
                 timeFlag = true;
             }
             tempTimes += ".";
             if(th1.isChecked()){
-                tempTimes += "1";
+                tempTimes += "0";
                 timeFlag = true;
             }
             if(th2.isChecked()){
-                tempTimes += "2";
+                tempTimes += "1";
                 timeFlag = true;
             }
             if(th3.isChecked()){
-                tempTimes += "3";
+                tempTimes += "2";
                 timeFlag = true;
             }
             if(th4.isChecked()){
-                tempTimes += "4";
+                tempTimes += "3";
                 timeFlag = true;
             }
             if(th5.isChecked()){
-                tempTimes += "5";
+                tempTimes += "4";
                 timeFlag = true;
             }
             tempTimes += ".";
             if(f1.isChecked()){
-                tempTimes += "1";
+                tempTimes += "0";
                 timeFlag = true;
             }
             if(f2.isChecked()){
-                tempTimes += "2";
+                tempTimes += "1";
                 timeFlag = true;
             }
             if(f3.isChecked()){
-                tempTimes += "3";
+                tempTimes += "2";
                 timeFlag = true;
             }
             if(f4.isChecked()){
-                tempTimes += "4";
+                tempTimes += "3";
                 timeFlag = true;
             }
             if(f5.isChecked()){
-                tempTimes += "5";
+                tempTimes += "4";
                 timeFlag = true;
             }
             tempTimes += ".";
             if(sa1.isChecked()){
-                tempTimes += "1";
+                tempTimes += "0";
                 timeFlag = true;
             }
             if(sa2.isChecked()){
-                tempTimes += "2";
+                tempTimes += "1";
                 timeFlag = true;
             }
             if(sa3.isChecked()){
-                tempTimes += "3";
+                tempTimes += "2";
                 timeFlag = true;
             }
             if(sa4.isChecked()){
-                tempTimes += "4";
+                tempTimes += "3";
                 timeFlag = true;
             }
             if(sa5.isChecked()){
-                tempTimes += "5";
+                tempTimes += "4";
                 timeFlag = true;
             }
             tempTimes += ".";
             if(su1.isChecked()){
-                tempTimes += "1";
+                tempTimes += "0";
                 timeFlag = true;
             }
             if(su2.isChecked()){
-                tempTimes += "2";
+                tempTimes += "1";
                 timeFlag = true;
             }
             if(su3.isChecked()){
-                tempTimes += "3";
+                tempTimes += "2";
                 timeFlag = true;
             }
             if(su4.isChecked()){
-                tempTimes += "4";
+                tempTimes += "3";
                 timeFlag = true;
             }
             if(su5.isChecked()) {
-                tempTimes += "5";
+                tempTimes += "4";
                 timeFlag = true;
             }
             newTimes = tempTimes;

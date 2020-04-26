@@ -11,6 +11,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
+    //System variable that controls pretty much everything related to the back end of the program
+    private System theSystem = new System();
     //private ArrayList<Account> allAccounts;
     private byte loginCount = 0;
 
