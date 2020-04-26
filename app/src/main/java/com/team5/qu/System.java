@@ -3,7 +3,6 @@ package com.team5.qu;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.PriorityQueue;
@@ -11,26 +10,26 @@ import java.util.PriorityQueue;
 public class System
 {
     //Acc
-    private ArrayList<Account> accounts;
-    private AccountComparator accountComparator = new AccountComparator();
+    private static ArrayList<Account> accounts = new ArrayList<>();
+    private static AccountComparator accountComparator = new AccountComparator();
     //parent directory for all files
-    private File parentDir;
+    private static File parentDir;
 
     /**
-     * Initializes the system by initializing the accounts array
+     * Sets the parent directory, to store the file
+     * @param parentDir  the parent directory value
      */
-    public System(File dataLoc)
+    public static void setParentDir(File parentDir)
     {
-        accounts = new ArrayList<Account>();
-        parentDir = dataLoc;
-        //readAccountsFromFile();
+        System.parentDir = parentDir;
     }
+
 
     /**
      * Adds an account to the system, done when an account is first created
      * @param newAccount  The new account to be added
      */
-    public void addAccount(Account newAccount)
+    public static void addAccount(Account newAccount)
     {
         int x= Collections.binarySearch(accounts, newAccount, accountComparator);
         if(x<0)
@@ -44,7 +43,7 @@ public class System
      * @param username  The username to check
      * @return  True if the username is available, false if not.
      */
-    public boolean checkAvailableAccount(String username)
+    public static boolean checkAvailableAccount(String username)
     {
         return getAccountFromUsername(username) == null;
     }
@@ -53,7 +52,7 @@ public class System
      * Gets the preferences from all the stored accounts
      * @return  An ArrayList of ArrayList of type Preference, since each account's preferences are stored in an ArrayList.
      */
-    public ArrayList<ArrayList<Preference>> getPreferencesFromUsers()
+    public static ArrayList<ArrayList<Preference>> getPreferencesFromUsers()
     {
         ArrayList<ArrayList<Preference>> preferences = new ArrayList<>();
         for (Account a : accounts)
@@ -68,7 +67,7 @@ public class System
      * Dummy accounts do not store password or other sensitive info for security purposes.
      * @return  The ArrayList of dummy accounts
      */
-    public ArrayList<Account> getDummyAccounts()
+    public static ArrayList<Account> getDummyAccounts()
     {
         ArrayList<Account> dummyAccount = new ArrayList<Account>();
         for (Account a : accounts)
@@ -83,7 +82,7 @@ public class System
      * @param username  the username to find
      * @return  The dummy account associated with that username, or null if none is found.
      */
-    public Account getAccountFromUsername(String username)
+    public static Account getAccountFromUsername(String username)
     {
         Account match = new Account("", username, "","","","",new ArrayList<String>(),4);
         int indexOfAccount = Collections.binarySearch(accounts, match, accountComparator);
@@ -98,7 +97,7 @@ public class System
      * @param requestingUser  The user who is requesting matches
      * @return  A priority queue of matches, sorted by how closely they match.
      */
-    public PriorityQueue<Account> matchUsers(Account requestingUser)
+    public static PriorityQueue<Account> matchUsers(Account requestingUser)
     {
         return MatchingAlgorithm.matchUsers(getDummyAccounts(), requestingUser);
     }
@@ -110,7 +109,7 @@ public class System
      * @param User1  The first matched user
      * @param User2  The second matched user
      */
-    public void informUserMatch(Account User1, Account User2)
+    public static void informUserMatch(Account User1, Account User2)
     {
         if (User1.acceptAccount(User2) && User2.acceptAccount(User2))
         {
@@ -127,7 +126,7 @@ public class System
     /**
      * Writes all the accounts stored into a file, for persistent storage
      */
-    public void writeAccountsToFile()
+    public static void writeAccountsToFile()
     {
         try{
         File accountsFile = new File(parentDir, "accounts.txt");

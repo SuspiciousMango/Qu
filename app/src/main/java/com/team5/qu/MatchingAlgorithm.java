@@ -34,6 +34,7 @@ class MatchingAlgorithm
         // The main for loop to sift through all stored accounts and find matches for the requesting user
         for (Account otherAccount : accounts)
         {
+            // Check if the user already accepted or rejected the other user. If they have, skip them
             int pendingCheck = Collections.binarySearch(requestingUser.getPending(), otherAccount, actualAccountComparator);
             int confirmCheck = Collections.binarySearch(requestingUser.getConfirmed(), otherAccount, actualAccountComparator);
             int rejectCheck = Collections.binarySearch(requestingUser.getRejected(), otherAccount.getUsername());
