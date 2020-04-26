@@ -9,10 +9,14 @@ import android.widget.EditText;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.io.File;
+
 public class MainActivity extends AppCompatActivity {
 
+    //the location that all system files are stored in
+    private File dataLoc = getFilesDir();
     //System variable that controls pretty much everything related to the back end of the program
-    private System theSystem = new System();
+    private System theSystem = new System(dataLoc);
     //private ArrayList<Account> allAccounts;
     private byte loginCount = 0;
 

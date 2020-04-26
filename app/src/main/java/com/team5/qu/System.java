@@ -1,5 +1,6 @@
 package com.team5.qu;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -12,12 +13,17 @@ public class System
     //Acc
     private ArrayList<Account> accounts;
     private AccountComparator accountComparator = new AccountComparator();
+    //parent directory for all files
+    private File parentDir;
+
     /**
      * Initializes the system by initializing the accounts array
      */
-    public System()
+    public System(File dataLoc)
     {
         accounts = new ArrayList<Account>();
+        parentDir = dataLoc;
+        //readAccountsFromFile();
     }
 
     /**
@@ -123,12 +129,17 @@ public class System
      */
     public void writeAccountsToFile()
     {
-        try {
-            FileWriter accountsFile = new FileWriter("accounts.txt");
-            for (Account a : accounts) {
-                accountsFile.write(Account.createFile(a));
-            }
-            accountsFile.close();
+        try{
+        File accountsFile = new File(parentDir, "accounts.txt");
+        if(!accountsFile.exists()){
+            accountsFile.delete();
+        }
+        FileWriter accountWriter = new FileWriter(accountsFile);
+        for (Account a : accounts)
+        {
+            accountWriter.write(Account.createFile(a));
+        }
+            accountWriter.close();
         }
         catch (IOException e)
         {
