@@ -1,3 +1,5 @@
+package com.team5.qu;
+
 public class Preference {
     private double weight;
     private String name;
