@@ -45,6 +45,7 @@
     <string name="action_mix">the MIX</string>
     <string name="action_engineering">the Engineering Building</string>
     <string name="action_dorm">my own dorm room/apartment/home</string>
+    <string name="action_online">virtually/online</string>
     <string name="text_method_preference">I study by</string>
     <string name="action_flashcards">making and reviewing flashcards</string>
     <string name="action_practice_problems">going over practice problems</string>

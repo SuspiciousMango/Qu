@@ -262,6 +262,7 @@ public class AccountCreateActivity extends AppCompatActivity {
             CheckBox locMIX = findViewById(R.id.check_mix);
             CheckBox locEngr = findViewById(R.id.check_engr);
             CheckBox locDorm = findViewById(R.id.check_dorm);
+            CheckBox locOnline = findViewById(R.id.check_online);
             CheckBox prefFlash = findViewById(R.id.check_flashcards);
             CheckBox prefPract = findViewById(R.id.check_practiceproblems);
             CheckBox prefLect = findViewById(R.id.check_lecture);
@@ -272,6 +273,7 @@ public class AccountCreateActivity extends AppCompatActivity {
             boolean tempLocMIX = locMIX.isChecked();
             boolean tempLocEngr = locEngr.isChecked();
             boolean tempLocDorm = locDorm.isChecked();
+            boolean tempLocOnline = locOnline.isChecked();
             boolean tempPrefFlash = prefFlash.isChecked();
             boolean tempPrefPract = prefPract.isChecked();
             boolean tempPrefLect = prefLect.isChecked();
@@ -314,6 +316,10 @@ public class AccountCreateActivity extends AppCompatActivity {
             }
             if(tempLocDorm){
                 tempLocations += "d";
+                locationFlag = true;
+            }
+            if(tempLocOnline){
+                tempLocations += "o";
                 locationFlag = true;
             }
             if(locationFlag){
