@@ -63,9 +63,9 @@ public class AccountCreateActivity extends AppCompatActivity {
         Snackbar noTimeSelectedError = Snackbar.make(v, "ERROR: At least 1 timeslot must be selected (more is better though)", Snackbar.LENGTH_LONG);
         Snackbar noPreferenceSelectedError = Snackbar.make(v, "ERROR: Please select at least 1 preference", Snackbar.LENGTH_LONG);
         if(screenCount == 0) {
-            EditText username = (EditText)(findViewById(R.id.new_username));
-            EditText password = (EditText)(findViewById(R.id.new_password));
-            EditText pWordConfirm = (EditText)(findViewById(R.id.confirm_password));
+            EditText username = findViewById(R.id.new_username);
+            EditText password = findViewById(R.id.new_password);
+            EditText pWordConfirm = findViewById(R.id.confirm_password);
             String tempUName = username.getText().toString().trim();
             String tempPWord = password.getText().toString().trim();
             String pWordCnf = pWordConfirm.getText().toString().trim();
@@ -99,13 +99,13 @@ public class AccountCreateActivity extends AppCompatActivity {
         else if(screenCount == 1){
             //Do checks before changing screen (and stop the screen from changing if stuff isn't correct
             //Also screenCount should only increment when the screen actually changes, not before or that will screw things up
-            EditText name = (EditText)(findViewById(R.id.name));
-            RadioGroup gender = (RadioGroup)(findViewById(R.id.genderRadioGroup));
+            EditText name = findViewById(R.id.name);
+            RadioGroup gender = findViewById(R.id.genderRadioGroup);
             final int MALE = R.id.male;
             final int FEMALE = R.id.female;
             final int OTHER = R.id.pns;
-            EditText email = (EditText)(findViewById(R.id.email));
-            EditText phone = (EditText)(findViewById(R.id.phone));
+            EditText email = findViewById(R.id.email);
+            EditText phone = findViewById(R.id.phone);
             String tempName = name.getText().toString().trim();
             int tempGender = gender.getCheckedRadioButtonId();
             String tempEmail = email.getText().toString().trim();
@@ -158,8 +158,8 @@ public class AccountCreateActivity extends AppCompatActivity {
         else if(screenCount == 2){
             //Do checks before changing screen (and stop the screen from changing if stuff isn't correct
             //Also screenCount should only increment when the screen actually changes, not before or that will screw things up
-            Spinner major = (Spinner)(findViewById(R.id.spinner_major));
-            RadioGroup year = (RadioGroup)(findViewById(R.id.yearRadioGroup));
+            Spinner major = findViewById(R.id.spinner_major);
+            RadioGroup year = findViewById(R.id.yearRadioGroup);
             final int FRESH = R.id.freshman;
             final int SOPH = R.id.sophomore;
             final int JUN = R.id.junior;
@@ -202,13 +202,13 @@ public class AccountCreateActivity extends AppCompatActivity {
         else if(screenCount == 3) {
             //Do checks before changing screen (and stop the screen from changing if stuff isn't correct
             //Also screenCount should only increment when the screen actually changes, not before or that will screw things up
-            Spinner class1 = (Spinner)(findViewById(R.id.class_1));
-            Spinner class2 = (Spinner)(findViewById(R.id.class_2));
-            Spinner class3 = (Spinner)(findViewById(R.id.class_3));
-            Spinner class4 = (Spinner)(findViewById(R.id.class_4));
-            Spinner class5 = (Spinner)(findViewById(R.id.class_5));
-            Spinner class6 = (Spinner)(findViewById(R.id.class_6));
-            Spinner class7 = (Spinner)(findViewById(R.id.class_7));
+            Spinner class1 = findViewById(R.id.class_1);
+            Spinner class2 = findViewById(R.id.class_2);
+            Spinner class3 = findViewById(R.id.class_3);
+            Spinner class4 = findViewById(R.id.class_4);
+            Spinner class5 = findViewById(R.id.class_5);
+            Spinner class6 = findViewById(R.id.class_6);
+            Spinner class7 = findViewById(R.id.class_7);
             String tempClass1 = ((String)(class1.getSelectedItem())).trim();
             String tempClass2 = ((String)(class2.getSelectedItem())).trim();
             String tempClass3 = ((String)(class3.getSelectedItem())).trim();
@@ -253,19 +253,19 @@ public class AccountCreateActivity extends AppCompatActivity {
         else if(screenCount == 4) {
             //Do checks before changing screen (and stop the screen from changing if stuff isn't correct
             //Also screenCount should only increment when the screen actually changes, not before or that will screw things up
-            RadioGroup genderPreference = (RadioGroup)(findViewById(R.id.studyGenderRadioGroup));
+            RadioGroup genderPreference = findViewById(R.id.studyGenderRadioGroup);
             final int MALES = R.id.males;
             final int FEMALES = R.id.females;
             final int ANYONE = R.id.anyone;
-            CheckBox locJC = (CheckBox)(findViewById(R.id.check_jc));
-            CheckBox locFen = (CheckBox)(findViewById(R.id.check_fenwick));
-            CheckBox locMIX = (CheckBox)(findViewById(R.id.check_mix));
-            CheckBox locEngr = (CheckBox)(findViewById(R.id.check_engr));
-            CheckBox locDorm = (CheckBox)(findViewById(R.id.check_dorm));
-            CheckBox prefFlash = (CheckBox)(findViewById(R.id.check_flashcards));
-            CheckBox prefPract = (CheckBox)(findViewById(R.id.check_practiceproblems));
-            CheckBox prefLect = (CheckBox)(findViewById(R.id.check_lecture));
-            CheckBox prefTA = (CheckBox)(findViewById(R.id.check_officehours));
+            CheckBox locJC = findViewById(R.id.check_jc);
+            CheckBox locFen = findViewById(R.id.check_fenwick);
+            CheckBox locMIX = findViewById(R.id.check_mix);
+            CheckBox locEngr = findViewById(R.id.check_engr);
+            CheckBox locDorm = findViewById(R.id.check_dorm);
+            CheckBox prefFlash = findViewById(R.id.check_flashcards);
+            CheckBox prefPract = findViewById(R.id.check_practiceproblems);
+            CheckBox prefLect = findViewById(R.id.check_lecture);
+            CheckBox prefTA = findViewById(R.id.check_officehours);
             int tempGenderPreference = genderPreference.getCheckedRadioButtonId();
             boolean tempLocJC = locJC.isChecked();
             boolean tempLocFen = locFen.isChecked();
@@ -352,42 +352,41 @@ public class AccountCreateActivity extends AppCompatActivity {
         else if(screenCount == 5) {
             //Do checks before changing screen (and stop the screen from changing if stuff isn't correct
             //Also screenCount should only increment when the screen actually changes, not before or that will screw things up
-            byte checkCount = 0;
-            CheckBox m1 = (CheckBox)(findViewById(R.id.m_8_11AM));
-            CheckBox m2 = (CheckBox)(findViewById(R.id.m_11_2));
-            CheckBox m3 = (CheckBox)(findViewById(R.id.m_2_5));
-            CheckBox m4 = (CheckBox)(findViewById(R.id.m_5_8));
-            CheckBox m5 = (CheckBox)(findViewById(R.id.m_8_11PM));
-            CheckBox t1 = (CheckBox)(findViewById(R.id.t_8_11AM));
-            CheckBox t2 = (CheckBox)(findViewById(R.id.t_11_2));
-            CheckBox t3 = (CheckBox)(findViewById(R.id.t_2_5));
-            CheckBox t4 = (CheckBox)(findViewById(R.id.t_5_8));
-            CheckBox t5 = (CheckBox)(findViewById(R.id.t_8_11PM));
-            CheckBox w1 = (CheckBox)(findViewById(R.id.w_8_11AM));
-            CheckBox w2 = (CheckBox)(findViewById(R.id.w_11_2));
-            CheckBox w3 = (CheckBox)(findViewById(R.id.w_2_5));
-            CheckBox w4 = (CheckBox)(findViewById(R.id.w_5_8));
-            CheckBox w5 = (CheckBox)(findViewById(R.id.w_8_11PM));
-            CheckBox th1 = (CheckBox)(findViewById(R.id.th_8_11AM));
-            CheckBox th2 = (CheckBox)(findViewById(R.id.th_11_2));
-            CheckBox th3 = (CheckBox)(findViewById(R.id.th_2_5));
-            CheckBox th4 = (CheckBox)(findViewById(R.id.th_5_8));
-            CheckBox th5 = (CheckBox)(findViewById(R.id.th_8_11PM));
-            CheckBox f1 = (CheckBox)(findViewById(R.id.f_8_11AM));
-            CheckBox f2 = (CheckBox)(findViewById(R.id.f_11_2));
-            CheckBox f3 = (CheckBox)(findViewById(R.id.f_2_5));
-            CheckBox f4 = (CheckBox)(findViewById(R.id.f_5_8));
-            CheckBox f5 = (CheckBox)(findViewById(R.id.f_8_11PM));
-            CheckBox sa1 = (CheckBox)(findViewById(R.id.sa_8_11AM));
-            CheckBox sa2 = (CheckBox)(findViewById(R.id.sa_11_2));
-            CheckBox sa3 = (CheckBox)(findViewById(R.id.sa_2_5));
-            CheckBox sa4 = (CheckBox)(findViewById(R.id.sa_5_8));
-            CheckBox sa5 = (CheckBox)(findViewById(R.id.sa_8_11PM));
-            CheckBox su1 = (CheckBox)(findViewById(R.id.su_8_11AM));
-            CheckBox su2 = (CheckBox)(findViewById(R.id.su_11_2));
-            CheckBox su3 = (CheckBox)(findViewById(R.id.su_2_5));
-            CheckBox su4 = (CheckBox)(findViewById(R.id.su_5_8));
-            CheckBox su5 = (CheckBox)(findViewById(R.id.su_8_11PM));
+            CheckBox m1 = findViewById(R.id.m_8_11AM);
+            CheckBox m2 = findViewById(R.id.m_11_2);
+            CheckBox m3 = findViewById(R.id.m_2_5);
+            CheckBox m4 = findViewById(R.id.m_5_8);
+            CheckBox m5 = findViewById(R.id.m_8_11PM);
+            CheckBox t1 = findViewById(R.id.t_8_11AM);
+            CheckBox t2 = findViewById(R.id.t_11_2);
+            CheckBox t3 = findViewById(R.id.t_2_5);
+            CheckBox t4 = findViewById(R.id.t_5_8);
+            CheckBox t5 = findViewById(R.id.t_8_11PM);
+            CheckBox w1 = findViewById(R.id.w_8_11AM);
+            CheckBox w2 = findViewById(R.id.w_11_2);
+            CheckBox w3 = findViewById(R.id.w_2_5);
+            CheckBox w4 = findViewById(R.id.w_5_8);
+            CheckBox w5 = findViewById(R.id.w_8_11PM);
+            CheckBox th1 = findViewById(R.id.th_8_11AM);
+            CheckBox th2 = findViewById(R.id.th_11_2);
+            CheckBox th3 = findViewById(R.id.th_2_5);
+            CheckBox th4 = findViewById(R.id.th_5_8);
+            CheckBox th5 = findViewById(R.id.th_8_11PM);
+            CheckBox f1 = findViewById(R.id.f_8_11AM);
+            CheckBox f2 = findViewById(R.id.f_11_2);
+            CheckBox f3 = findViewById(R.id.f_2_5);
+            CheckBox f4 = findViewById(R.id.f_5_8);
+            CheckBox f5 = findViewById(R.id.f_8_11PM);
+            CheckBox sa1 = findViewById(R.id.sa_8_11AM);
+            CheckBox sa2 = findViewById(R.id.sa_11_2);
+            CheckBox sa3 = findViewById(R.id.sa_2_5);
+            CheckBox sa4 = findViewById(R.id.sa_5_8);
+            CheckBox sa5 = findViewById(R.id.sa_8_11PM);
+            CheckBox su1 = findViewById(R.id.su_8_11AM);
+            CheckBox su2 = findViewById(R.id.su_11_2);
+            CheckBox su3 = findViewById(R.id.su_2_5);
+            CheckBox su4 = findViewById(R.id.su_5_8);
+            CheckBox su5 = findViewById(R.id.su_8_11PM);
             String tempTimes = "";
             boolean timeFlag = false;
             if(m1.isChecked()){
@@ -548,10 +547,10 @@ public class AccountCreateActivity extends AppCompatActivity {
         else {
             //If screencount has incremented past 5 (made it to 6), the account creation process is over and its time to display the main menu
             //DON'T FORGET TO DO CHECKS FOR THE PREFERENCE ORDERING SCREEN HERE BEFORE FINISHING ACCOUNT CREATION PROCESS
-            Spinner preference1 = (Spinner)(findViewById(R.id.preference1));
-            Spinner preference2 = (Spinner)(findViewById(R.id.preference2));
-            Spinner preference3 = (Spinner)(findViewById(R.id.preference3));
-            Spinner preference4 = (Spinner)(findViewById(R.id.preference4));
+            Spinner preference1 = findViewById(R.id.preference1);
+            Spinner preference2 = findViewById(R.id.preference2);
+            Spinner preference3 = findViewById(R.id.preference3);
+            Spinner preference4 = findViewById(R.id.preference4);
             String tempPreference1 = ((String)(preference1.getSelectedItem())).trim();
             String tempPreference2 = ((String)(preference2.getSelectedItem())).trim();
             String tempPreference3 = ((String)(preference3.getSelectedItem())).trim();
@@ -561,7 +560,7 @@ public class AccountCreateActivity extends AppCompatActivity {
             newPreferenceOrder.add(tempPreference2);
             newPreferenceOrder.add(tempPreference3);
             newPreferenceOrder.add(tempPreference4);
-            if(preference1.equals("none")){
+            if(tempPreference1.equals("none")){
                 noPreferenceSelectedError.show();
             }
             else {
