@@ -123,12 +123,12 @@ public class System
     /**
      * Writes all the accounts stored into a file, for persistent storage
      */
-    public void writeAccountsToFile()
+    public void writeAccountsToFile() throws IOException
     {
         FileWriter accountsFile = new FileWriter("accounts.txt");
         for (Account a : accounts)
         {
-            accountsFile.write(a.createFile());
+            accountsFile.write(Account.createFile(a));
         }
         try
         {
