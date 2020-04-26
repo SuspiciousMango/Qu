@@ -130,12 +130,6 @@ public class System
         {
             accountsFile.write(Account.createFile(a));
         }
-        try
-        {
-            accountsFile.close();
-        }
-        catch (IOException e)
-        {
-        }
+        accountsFile.close();
     }
 }
