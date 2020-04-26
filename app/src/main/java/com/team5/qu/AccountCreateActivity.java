@@ -588,7 +588,7 @@ public class AccountCreateActivity extends AppCompatActivity {
                     }
                 }
                 newAccount = new Account(newName, newUsername, newPassword, newEmail, newPhoneNum, newMajor, courses, newYear, newPreferences);
-                System.addAccount(newAccount);
+                QuSystem.addAccount(newAccount);
                 //Intent mainMenu = new Intent(this, MainMenuActivity.class);
                 //Transfer all the account data over to main menu/save it to a file
                 //startActivity(mainMenu);

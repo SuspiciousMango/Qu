@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
-public class System
+public class QuSystem
 {
     //Acc
     protected static ArrayList<Account> accounts = new ArrayList<>();
@@ -21,7 +21,7 @@ public class System
      */
     public static void setParentDir(File parentDir)
     {
-        System.parentDir = parentDir;
+        QuSystem.parentDir = parentDir;
     }
 
 
