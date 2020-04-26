@@ -1,6 +1,7 @@
 package com.team5.qu;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -28,13 +29,17 @@ class MatchingAlgorithm
                 return matchRating;
             }
         };
-
+        AccountComparator actualAccountComparator = new AccountComparator();
         PriorityQueue<Account> matchedUsers = new PriorityQueue<Account>(accountComparator);
         // The main for loop to sift through all stored accounts and find matches for the requesting user
         for (Account otherAccount : accounts)
         {
+            int pendingCheck = Collections.binarySearch(requestingUser.getPending(), otherAccount, actualAccountComparator);
+            int confirmCheck = Collections.binarySearch(requestingUser.getConfirmed(), otherAccount, actualAccountComparator);
+            int rejectCheck = Collections.binarySearch(requestingUser.getRejected(), otherAccount.getUsername());
+            boolean notInArray = (pendingCheck < 0) && (confirmCheck < 0) && (rejectCheck < 0);
             // Don't let the user match with themselves
-            if (!otherAccount.getUsername().equals(requestingUser.getUsername()))
+            if ((!otherAccount.getUsername().equals(requestingUser.getUsername())) && notInArray)
             {
                 matchRating = 0;
                 // Increase rating based on number of shared courses

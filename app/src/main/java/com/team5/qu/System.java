@@ -2,14 +2,16 @@ package com.team5.qu;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class System
 {
     //Acc
     private ArrayList<Account> accounts;
-
+    private AccountComparator accountComparator = new AccountComparator();
     /**
      * Initializes the system by initializing the accounts array
      */
@@ -24,7 +26,11 @@ public class System
      */
     public void addAccount(Account newAccount)
     {
-        accounts.add(newAccount);
+        int x= Collections.binarySearch(accounts, newAccount, accountComparator);
+        if(x<0)
+        {
+            accounts.add((x+1)*-1,newAccount);
+        }
     }
 
     /**
@@ -34,12 +40,7 @@ public class System
      */
     public boolean checkAvailableAccount(String username)
     {
-        for (Account a : accounts)
-        {
-            if (a.getUsername().equals(username))
-                return false;
-        }
-        return true;
+        return getAccountFromUsername(username) == null;
     }
 
     /**
@@ -78,16 +79,13 @@ public class System
      */
     public Account getAccountFromUsername(String username)
     {
-        Account match = null;
-        for (Account a : accounts)
+        Account match = new Account("", username, "","","","",new ArrayList<String>(),4);
+        int indexOfAccount = Collections.binarySearch(accounts, match, accountComparator);
+        if (indexOfAccount >= 0)
         {
-            if (a.getUsername().equals(username))
-            {
-                match = a.createDummyAccount();
-                break;
-            }
+            return accounts.get(indexOfAccount);
         }
-        return match;
+        return null;
     }
     /**
      * Finds matches for the requesting user.
@@ -123,13 +121,17 @@ public class System
     /**
      * Writes all the accounts stored into a file, for persistent storage
      */
-    public void writeAccountsToFile() throws IOException
+    public void writeAccountsToFile()
     {
-        FileWriter accountsFile = new FileWriter("accounts.txt");
-        for (Account a : accounts)
-        {
-            accountsFile.write(Account.createFile(a));
+        try {
+            FileWriter accountsFile = new FileWriter("accounts.txt");
+            for (Account a : accounts) {
+                accountsFile.write(Account.createFile(a));
+            }
+            accountsFile.close();
         }
-        accountsFile.close();
+        catch (IOException e)
+        {
+        }
     }
 }
