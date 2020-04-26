@@ -109,11 +109,11 @@ class MatchingAlgorithm
                                     int[] findOtherCommonTimes = new int[4];
                                     for (int k = 0; k < requestingUserDay.length(); k++)
                                     {
-                                        findRequestingCommonTimes[(requestingUserDay.charAt(k) - '1')]++;
+                                        findRequestingCommonTimes[(requestingUserDay.charAt(k) - '0')]++;
                                     }
                                     for (int k = 0; k < otherUserDay.length(); k++)
                                     {
-                                        findOtherCommonTimes[(otherUserDay.charAt(k) - '1')]++;
+                                        findOtherCommonTimes[(otherUserDay.charAt(k) - '0')]++;
                                     }
                                     for (int k = 0; k < findRequestingCommonTimes.length; k++)
                                     {
