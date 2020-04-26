@@ -329,4 +329,16 @@
         <item>Location</item>
         <item>Gender</item>
     </string-array>
+
+    <string name="Chat">Chat</string>
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
+    <string name="Home">Home</string>
+    <string name="Matched">Matched</string>
+    <string name="Settings">Settings</string>
+    <string name="MyProfile">My Profile</string>
+
+
+
+
 </resources>
