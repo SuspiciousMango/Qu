@@ -15,8 +15,6 @@ public class MainActivity extends AppCompatActivity {
 
     //the location that all system files are stored in
     private File dataLoc = getFilesDir();
-    //System variable that controls pretty much everything related to the back end of the program
-    private System theSystem = new System(dataLoc);
     //private ArrayList<Account> allAccounts;
     private byte loginCount = 0;
 
@@ -24,8 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //allAccounts = new ArrayList<Account>();
-        //input account file data here
+        System.setParentDir(dataLoc);
     }
 
     /**

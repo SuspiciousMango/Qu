@@ -19,18 +19,19 @@ public class AccountCreateActivity extends AppCompatActivity {
     private String newUsername;
     private String newPassword;
     private String newName;
-    private char newGender;
+    private String newGender;
     private String newEmail;
     private String newPhoneNum;
     private String newMajor;
-    private char newYear;
+    private int newYear;
     private ArrayList<String> courses;
-    private char newGenderPreference;
+    private String newGenderPreference;
     private String newLocations;
     private String newTechniques;
     private String newTimes;
     private ArrayList<String> newPreferenceOrder;
-    //private Account newAccount;
+    private ArrayList<Preference> newPreferences;
+    private Account newAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +62,7 @@ public class AccountCreateActivity extends AppCompatActivity {
         Snackbar noLocationSelectedError = Snackbar.make(v, "ERROR: At least 1 location must be selected", Snackbar.LENGTH_LONG);
         Snackbar noTechniqueSelectedError = Snackbar.make(v, "ERROR: At least 1 study technique must be selected", Snackbar.LENGTH_LONG);
         Snackbar noTimeSelectedError = Snackbar.make(v, "ERROR: At least 1 timeslot must be selected (more is better though)", Snackbar.LENGTH_LONG);
-        Snackbar noPreferenceSelectedError = Snackbar.make(v, "ERROR: Please select at least 1 preference", Snackbar.LENGTH_LONG);
+        Snackbar noPreferenceSelectedError = Snackbar.make(v, "ERROR: Please order all 4 preferences", Snackbar.LENGTH_LONG);
         if(screenCount == 0) {
             EditText username = findViewById(R.id.new_username);
             EditText password = findViewById(R.id.new_password);
@@ -122,15 +123,15 @@ public class AccountCreateActivity extends AppCompatActivity {
                 nameFlag = true;
             }
             if(tempGender == MALE) {
-                newGender = 'm';
+                newGender = "m";
                 genderFlag = true;
             }
             else if(tempGender == FEMALE) {
-                newGender = 'f';
+                newGender = "f";
                 genderFlag = true;
             }
             else if(tempGender == OTHER) {
-                newGender = 'o';
+                newGender = "o";
                 genderFlag = true;
             }
             else{
@@ -176,19 +177,19 @@ public class AccountCreateActivity extends AppCompatActivity {
                 majorFlag = true;
             }
             if(tempYear == FRESH) {
-                newYear = 'f';
+                newYear = 1;
                 yearFlag = true;
             }
             else if(tempYear == SOPH) {
-                newYear = 's';
+                newYear = 2;
                 yearFlag = true;
             }
             else if(tempYear == JUN) {
-                newYear = 'j';
+                newYear = 3;
                 yearFlag = true;
             }
             else if(tempYear == SEN) {
-                newYear = 'n';
+                newYear = 4;
                 yearFlag = true;
             }
             else{
@@ -284,15 +285,15 @@ public class AccountCreateActivity extends AppCompatActivity {
             String tempLocations = "";
             String tempTechniques = "";
             if(tempGenderPreference == MALES){
-                newGenderPreference = 'm';
+                newGenderPreference = "m";
                 genderPreferenceFlag = true;
             }
             else if(tempGenderPreference == FEMALES){
-                newGenderPreference = 'f';
+                newGenderPreference = "f";
                 genderPreferenceFlag = true;
             }
             else if(tempGenderPreference == ANYONE){
-                newGenderPreference = 'a';
+                newGenderPreference = "a";
                 genderPreferenceFlag = true;
             }
             else{
@@ -557,20 +558,37 @@ public class AccountCreateActivity extends AppCompatActivity {
             Spinner preference2 = findViewById(R.id.preference2);
             Spinner preference3 = findViewById(R.id.preference3);
             Spinner preference4 = findViewById(R.id.preference4);
-            String tempPreference1 = ((String)(preference1.getSelectedItem())).trim();
-            String tempPreference2 = ((String)(preference2.getSelectedItem())).trim();
-            String tempPreference3 = ((String)(preference3.getSelectedItem())).trim();
-            String tempPreference4 = ((String)(preference4.getSelectedItem())).trim();
             newPreferenceOrder = new ArrayList<String>();
-            newPreferenceOrder.add(tempPreference1);
-            newPreferenceOrder.add(tempPreference2);
-            newPreferenceOrder.add(tempPreference3);
-            newPreferenceOrder.add(tempPreference4);
-            if(tempPreference1.equals("none")){
+            newPreferenceOrder.add(((String)(preference1.getSelectedItem())).trim());
+            newPreferenceOrder.add(((String)(preference2.getSelectedItem())).trim());
+            newPreferenceOrder.add(((String)(preference3.getSelectedItem())).trim());
+            newPreferenceOrder.add(((String)(preference4.getSelectedItem())).trim());
+            if(newPreferenceOrder.get(0).equals("none") || newPreferenceOrder.get(1).equals("none") || newPreferenceOrder.get(2).equals("none") || newPreferenceOrder.get(3).equals("none")){
                 noPreferenceSelectedError.show();
             }
             else {
-                //newAccount = new Account(put all data here);
+                newPreferences = new ArrayList<Preference>();
+                newPreferences.add(new Preference(0.0, "gender", newGenderPreference));
+                newPreferences.add(new Preference(0.0, "available times", newTimes));
+                newPreferences.add(new Preference(0.0, "location to meet", newLocations));
+                newPreferences.add(new Preference(0.0, "study techniques", newTechniques));
+                for(int i = 0; i < newPreferenceOrder.size(); i++){
+                    String temp = newPreferenceOrder.remove(0);
+                    if(temp.equals("Gender")){
+                        newPreferences.get(0).setWeight(i + 1);
+                    }
+                    if(temp.equals("Time")){
+                        newPreferences.get(1).setWeight(i + 1);
+                    }
+                    if(temp.equals("Location")){
+                        newPreferences.get(2).setWeight(i + 1);
+                    }
+                    if(temp.equals("Technique")){
+                        newPreferences.get(3).setWeight(i + 1);
+                    }
+                }
+                newAccount = new Account(newName, newUsername, newPassword, newEmail, newPhoneNum, newMajor, courses, newYear, newPreferences);
+                System.addAccount(newAccount);
                 //Intent mainMenu = new Intent(this, MainMenuActivity.class);
                 //Transfer all the account data over to main menu/save it to a file
                 //startActivity(mainMenu);

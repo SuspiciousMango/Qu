@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
 public class System
 {
     //Acc
-    private static ArrayList<Account> accounts = new ArrayList<>();
+    protected static ArrayList<Account> accounts = new ArrayList<>();
     private static AccountComparator accountComparator = new AccountComparator();
     //parent directory for all files
     private static File parentDir;
@@ -84,7 +84,7 @@ public class System
      */
     public static Account getAccountFromUsername(String username)
     {
-        Account match = new Account("", username, "","","","",new ArrayList<String>(),4);
+        Account match = new Account("", username, "","","",new ArrayList<Preference>(),new ArrayList<String>(),4);
         int indexOfAccount = Collections.binarySearch(accounts, match, accountComparator);
         if (indexOfAccount >= 0)
         {

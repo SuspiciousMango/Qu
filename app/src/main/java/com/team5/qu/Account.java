@@ -53,7 +53,7 @@ private AccountComparator c= new AccountComparator();
     @param major current major
     @param year year enrolled
     */
-public Account(String name,String username, String password, String email,String phoneNumber, String major, ArrayList<String> courses, int year){
+public Account(String name,String username, String password, String email,String phoneNumber, String major, ArrayList<String> courses, int year, ArrayList<Preference> preferenceOrder){
     this.name=name;
     this.username=username;
     this.password=password;
@@ -65,11 +65,14 @@ public Account(String name,String username, String password, String email,String
     /*gender, meeting, times, location, study techniques
 
     */
-    
-    preferences.add(new Preference(0.0, "gender", ""));
-    preferences.add(new Preference(0.0, "available times", ""));
-    preferences.add(new Preference(0.0, "location to meet", ""));
-    preferences.add(new Preference(0.0, "study techniques", ""));
+
+    //*Edited by jayson to make UI integration easier
+    preferences = preferenceOrder;
+    //preferences.add(new Preference(0.0, "gender", ""));
+    //preferences.add(new Preference(0.0, "available times", ""));
+    //preferences.add(new Preference(0.0, "location to meet", ""));
+    //preferences.add(new Preference(0.0, "study techniques", ""));
+    //*
 
 }
 
