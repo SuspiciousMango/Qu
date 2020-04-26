@@ -36,7 +36,7 @@ public class System
     {
         for (Account a : accounts)
         {
-            if (accounts.getUsername().equals(username))
+            if (a.getUsername().equals(username))
                 return false;
         }
         return true;
@@ -51,7 +51,7 @@ public class System
         ArrayList<ArrayList<Preference>> preferences = new ArrayList<>();
         for (Account a : accounts)
         {
-            preferences.add(accounts.getPreferences());
+            preferences.add(a.getPreferences());
         }
         return preferences;
     }
@@ -66,7 +66,7 @@ public class System
         ArrayList<Account> dummyAccount = new ArrayList<Account>();
         for (Account a : accounts)
         {
-            dummyAccount.add(accounts.createDummyAccount());
+            dummyAccount.add(a.createDummyAccount());
         }
         return dummyAccount;
     }

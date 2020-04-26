@@ -56,7 +56,7 @@ class MatchingAlgorithm
                         matchRating += 3;
                     }
                     int i;
-                    ArrayList<Preference> requestPreference = accounts.getPreferences();
+                    ArrayList<Preference> requestPreference = requestingUser.getPreferences();
                     ArrayList<Preference> otherPreferences = otherAccount.getPreferences();
                     // Main for loop to compare preferences.
                     for (i = 0; i < requestPreference.size(); i++)
