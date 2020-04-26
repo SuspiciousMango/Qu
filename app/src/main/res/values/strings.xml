@@ -52,13 +52,14 @@
     <string name="action_ta">visiting the TA/professor during office hours</string>
     <string name="action_other">all of the above/other</string>
 
-    <string name="text_class_select">Please choose up to 6 classes that you wish to look for study partners for</string>
+    <string name="text_class_select">Please choose between 1 and 7 classes that you wish to look for study partners for</string>
     <string name="text_class_1">Class 1</string>
     <string name="text_class_2">Class 2</string>
     <string name="text_class_3">Class 3</string>
     <string name="text_class_4">Class 4</string>
     <string name="text_class_5">Class 5</string>
     <string name="text_class_6">Class 6</string>
+    <string name="text_class_7">Class 7</string>
 
     <string name="text_time_preference">I can study during the following times</string>
     <string name="text_time_dayofWeek">"M       T       W      Th       F      Sa       Su"</string>
@@ -315,15 +316,11 @@
         <item>Hospitality, Tourism and Events Management (BS): Events Management</item>
         <item>Hospitality, Tourism and Events Management (BS): Hospitality Management</item>
         <item>Hospitality, Tourism and Events Management (BS): Tourism Management</item>
-        <item>null</item>
-
-
-
     </string-array>
     <!---->
 
     <string-array name="order_preferences">
-        <item>None</item>
+        <item>none</item>
         <item>Time</item>
         <item>Technique</item>
         <item>Location</item>
@@ -337,8 +334,7 @@
     <string name="Matched">Matched</string>
     <string name="Settings">Settings</string>
     <string name="MyProfile">My Profile</string>
-
-
+    <string name="text_classes">Wants a buddy for:</string>
 
 
 </resources>

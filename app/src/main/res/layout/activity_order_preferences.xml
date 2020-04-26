@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="When chosing a study partner, these preferences matter:"
         android:textSize="15sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="31dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView16"
@@ -19,16 +25,20 @@
         android:layout_height="wrap_content"
         android:text="First Preference"
         android:textSize="15sp"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="145dp" />
+        app:layout_constraintBottom_toTopOf="@+id/preference1"
+        app:layout_constraintEnd_toEndOf="@+id/preference1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/preference1" />
 
     <Spinner
         android:id="@+id/preference1"
         android:layout_width="201dp"
         android:layout_height="40dp"
+        android:layout_marginTop="100dp"
         android:entries="@array/order_preferences"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="165dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView17"
@@ -36,8 +46,10 @@
         android:layout_height="wrap_content"
         android:text="Second Preference"
         android:textSize="15sp"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="227dp" />
+        app:layout_constraintBottom_toTopOf="@+id/preference2"
+        app:layout_constraintEnd_toEndOf="@+id/preference2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/preference2" />
 
     <TextView
         android:id="@+id/textView18"
@@ -45,8 +57,10 @@
         android:layout_height="wrap_content"
         android:text="Third Preference"
         android:textSize="15sp"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="313dp" />
+        app:layout_constraintBottom_toTopOf="@+id/preference3"
+        app:layout_constraintEnd_toEndOf="@+id/preference3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/preference3" />
 
     <TextView
         android:id="@+id/textView19"
@@ -54,32 +68,40 @@
         android:layout_height="wrap_content"
         android:text="Fourth Preference"
         android:textSize="15sp"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="410dp" />
+        app:layout_constraintBottom_toTopOf="@+id/preference4"
+        app:layout_constraintEnd_toEndOf="@+id/preference4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/preference4" />
 
     <Spinner
         android:id="@+id/preference2"
         android:layout_width="201dp"
         android:layout_height="40dp"
+        android:layout_marginTop="32dp"
         android:entries="@array/order_preferences"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="247dp" />
+        app:layout_constraintEnd_toEndOf="@+id/preference1"
+        app:layout_constraintStart_toStartOf="@+id/preference1"
+        app:layout_constraintTop_toBottomOf="@+id/preference1" />
 
     <Spinner
         android:id="@+id/preference3"
         android:layout_width="201dp"
         android:layout_height="40dp"
+        android:layout_marginTop="32dp"
         android:entries="@array/order_preferences"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="333dp" />
+        app:layout_constraintEnd_toEndOf="@+id/preference1"
+        app:layout_constraintStart_toStartOf="@+id/preference1"
+        app:layout_constraintTop_toBottomOf="@+id/preference2" />
 
     <Spinner
         android:id="@+id/preference4"
         android:layout_width="201dp"
         android:layout_height="40dp"
+        android:layout_marginTop="32dp"
         android:entries="@array/order_preferences"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="430dp" />
+        app:layout_constraintEnd_toEndOf="@+id/preference1"
+        app:layout_constraintStart_toStartOf="@+id/preference1"
+        app:layout_constraintTop_toBottomOf="@+id/preference3" />
 
     <Button
         android:id="@+id/next"
@@ -89,6 +111,9 @@
         android:onClick="onNextClick"
         android:text="@string/action_next"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="612dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
 </androidx.constraintlayout.widget.ConstraintLayout>

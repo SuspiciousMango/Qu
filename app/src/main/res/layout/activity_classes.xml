@@ -18,6 +18,17 @@
         app:layout_constraintStart_toStartOf="@+id/class_6" />
 
     <TextView
+        android:id="@+id/text_class_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_class_7"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/class_7"
+        app:layout_constraintEnd_toEndOf="@+id/class_7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/class_7" />
+
+    <TextView
         android:id="@+id/text_class_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -164,5 +175,16 @@
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/class_5" />
+
+    <Spinner
+        android:id="@+id/class_7"
+        android:layout_width="201dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:entries="@array/classes_CS_array"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/class_6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

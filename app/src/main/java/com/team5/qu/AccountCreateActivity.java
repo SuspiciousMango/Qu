@@ -2,17 +2,34 @@ package com.team5.qu;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.ArrayList;
+
 public class AccountCreateActivity extends AppCompatActivity {
 
-    private int screenCount = 0;
+    private byte screenCount = 0;
     private String newUsername;
     private String newPassword;
+    private String newName;
+    private char newGender;
+    private String newEmail;
+    private String newPhoneNum;
+    private String newMajor;
+    private char newYear;
+    private ArrayList<String> classes;
+    private char newGenderPreference;
+    private String newLocations;
+    private String newTechniques;
+    private String newTimes;
+    private ArrayList<String> newPreferenceOrder;
     //private Account newAccount;
 
     @Override
@@ -21,31 +38,30 @@ public class AccountCreateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_username);
     }
 
-    //TODO: When next button is clicked:
-    //  If screenCount == 1
-    //      Check if name/email/phone are empty and give according prompt if so
-    //      Check if a radio button has been selected and give according prompt if not
-    //  If screencount == 2
-    //      Check if a major has been chosen (selection is not "none") and give according prompt if not
-    //      Check if a year has been chosen and give according prompt if not
-    //  If screencount == 3
-    //      Check that at least one class has been selected (selection is not "none") and give according prompt if not
-    //  If screencount == 4
-    //      Check if at least one option from each category has been selected and give according prompt if not
-    //  If screencount == 5
-    //      Check if at least one time slot is checked and give according prompt if not
-    //          (additionally, a helpful message could be displayed if the user has selected few (possibly between 1 and 3 or so)
-    //          timeslots that the more timeslots they select the easier finding a buddy will be)
-    //  If screencount == 6
-    //      Check that each preference is ordered and give according prompt if not (one of the boxes left blank or one
-    //      of the preferences selected twice
-
+    /**
+     * Method called on the click of the next button during account creation
+     * Created by Jayson and edited by
+     * WARNING: This method is disgustingly long. If I had time to methodize I would have
+     */
     public void onNextClick(View v) {
         //Do checks before changing screen (and stop the screen from changing if stuff isn't correct
         //Also screenCount should only increment when the screen actually changes, not before or that will screw things up
-        Snackbar endOfProgramError = Snackbar.make(v, "Unfortunately, this is all of the program we have so far :(", Snackbar.LENGTH_LONG);
         Snackbar usernameInUseError = Snackbar.make(v, "ERROR: Username already in use", Snackbar.LENGTH_LONG);
+        Snackbar usernameBlankError = Snackbar.make(v, "ERROR: Username field left blank", Snackbar.LENGTH_LONG);
         Snackbar passwordMatchError = Snackbar.make(v, "ERROR: Password does not match password confirm", Snackbar.LENGTH_LONG);
+        Snackbar passwordBlankError = Snackbar.make(v, "ERROR: Password field left blank", Snackbar.LENGTH_LONG);
+        Snackbar nameBlankError = Snackbar.make(v, "ERROR: Name field left blank", Snackbar.LENGTH_LONG);
+        Snackbar noGenderSelectedError = Snackbar.make(v, "ERROR: No gender selected", Snackbar.LENGTH_LONG);
+        Snackbar emailBlankError = Snackbar.make(v, "ERROR: Email field left blank", Snackbar.LENGTH_LONG);
+        Snackbar phoneBlankError = Snackbar.make(v, "ERROR: Phone number field left blank", Snackbar.LENGTH_LONG);
+        Snackbar noMajorSelectedError = Snackbar.make(v, "ERROR: No major selected", Snackbar.LENGTH_LONG);
+        Snackbar noYearSelectedError = Snackbar.make(v, "ERROR: No year selected", Snackbar.LENGTH_LONG);
+        Snackbar noClassSelectedError = Snackbar.make(v, "ERROR: At least 1 class must be selected", Snackbar.LENGTH_LONG);
+        Snackbar noGenderPreferenceError = Snackbar.make(v, "ERROR: No gender preference selected", Snackbar.LENGTH_LONG);
+        Snackbar noLocationSelectedError = Snackbar.make(v, "ERROR: At least 1 location must be selected", Snackbar.LENGTH_LONG);
+        Snackbar noTechniqueSelectedError = Snackbar.make(v, "ERROR: At least 1 study technique must be selected", Snackbar.LENGTH_LONG);
+        Snackbar noTimeSelectedError = Snackbar.make(v, "ERROR: At least 1 timeslot must be selected (more is better though)", Snackbar.LENGTH_LONG);
+        Snackbar noPreferenceSelectedError = Snackbar.make(v, "ERROR: Please select at least 1 preference", Snackbar.LENGTH_LONG);
         if(screenCount == 0) {
             EditText username = (EditText)(findViewById(R.id.new_username));
             EditText password = (EditText)(findViewById(R.id.new_password));
@@ -55,14 +71,20 @@ public class AccountCreateActivity extends AppCompatActivity {
             String pWordCnf = pWordConfirm.getText().toString().trim();
             boolean userFlag = false;
             boolean pWordFlag = false;
-            if(usernameAvailable(tempUName)) {
+            if(tempUName.length() == 0){
+                usernameBlankError.show();
+            }
+            else if(usernameAvailable(tempUName)) {
                 newUsername = tempUName;
                 userFlag = true;
             }
             else{
                 usernameInUseError.show();
             }
-            if(tempPWord.equals(pWordCnf)) {
+            if(tempPWord.length() == 0){
+                passwordBlankError.show();
+            }
+            else if(tempPWord.equals(pWordCnf)) {
                 newPassword = tempPWord;
                 pWordFlag = true;
             }
@@ -77,41 +99,477 @@ public class AccountCreateActivity extends AppCompatActivity {
         else if(screenCount == 1){
             //Do checks before changing screen (and stop the screen from changing if stuff isn't correct
             //Also screenCount should only increment when the screen actually changes, not before or that will screw things up
-            setContentView(R.layout.activity_major);
-            screenCount++;
+            EditText name = (EditText)(findViewById(R.id.name));
+            RadioGroup gender = (RadioGroup)(findViewById(R.id.genderRadioGroup));
+            final int MALE = R.id.male;
+            final int FEMALE = R.id.female;
+            final int OTHER = R.id.pns;
+            EditText email = (EditText)(findViewById(R.id.email));
+            EditText phone = (EditText)(findViewById(R.id.phone));
+            String tempName = name.getText().toString().trim();
+            int tempGender = gender.getCheckedRadioButtonId();
+            String tempEmail = email.getText().toString().trim();
+            String tempPhone = phone.getText().toString().trim();
+            boolean nameFlag = false;
+            boolean genderFlag = false;
+            boolean emailFlag = false;
+            boolean phoneFlag = false;
+            if(tempName.length() == 0){
+                nameBlankError.show();
+            }
+            else{
+                newName = tempName;
+                nameFlag = true;
+            }
+            if(tempGender == MALE) {
+                newGender = 'm';
+                genderFlag = true;
+            }
+            else if(tempGender == FEMALE) {
+                newGender = 'f';
+                genderFlag = true;
+            }
+            else if(tempGender == OTHER) {
+                newGender = 'o';
+                genderFlag = true;
+            }
+            else{
+                noGenderSelectedError.show();
+            }
+            if(tempEmail.length() == 0){
+                emailBlankError.show();
+            }
+            else{
+                newEmail = tempEmail;
+                emailFlag = true;
+            }
+            if(tempPhone.length() == 0){
+                phoneBlankError.show();
+            }
+            else{
+                newPhoneNum = tempPhone;
+                phoneFlag = true;
+            }
+            if(nameFlag && genderFlag && emailFlag && phoneFlag) {
+                setContentView(R.layout.activity_major);
+                screenCount++;
+            }
         }
         else if(screenCount == 2){
             //Do checks before changing screen (and stop the screen from changing if stuff isn't correct
             //Also screenCount should only increment when the screen actually changes, not before or that will screw things up
-            setContentView(R.layout.activity_classes);
-            screenCount++;
+            Spinner major = (Spinner)(findViewById(R.id.spinner_major));
+            RadioGroup year = (RadioGroup)(findViewById(R.id.yearRadioGroup));
+            final int FRESH = R.id.freshman;
+            final int SOPH = R.id.sophomore;
+            final int JUN = R.id.junior;
+            final int SEN = R.id.senior;
+            String tempMajor = ((String)(major.getSelectedItem())).trim();
+            int tempYear = year.getCheckedRadioButtonId();
+            boolean majorFlag = false;
+            boolean yearFlag = false;
+            if(tempMajor.equals("none")) {
+                noMajorSelectedError.show();
+            }
+            else{
+                newMajor = tempMajor;
+                majorFlag = true;
+            }
+            if(tempYear == FRESH) {
+                newYear = 'f';
+                yearFlag = true;
+            }
+            else if(tempYear == SOPH) {
+                newYear = 's';
+                yearFlag = true;
+            }
+            else if(tempYear == JUN) {
+                newYear = 'j';
+                yearFlag = true;
+            }
+            else if(tempYear == SEN) {
+                newYear = 'n';
+                yearFlag = true;
+            }
+            else{
+                noYearSelectedError.show();
+            }
+            if(majorFlag && yearFlag) {
+                setContentView(R.layout.activity_classes);
+                screenCount++;
+            }
         }
         else if(screenCount == 3) {
             //Do checks before changing screen (and stop the screen from changing if stuff isn't correct
             //Also screenCount should only increment when the screen actually changes, not before or that will screw things up
-            setContentView(R.layout.activity_preferences);
-            screenCount++;
+            Spinner class1 = (Spinner)(findViewById(R.id.class_1));
+            Spinner class2 = (Spinner)(findViewById(R.id.class_2));
+            Spinner class3 = (Spinner)(findViewById(R.id.class_3));
+            Spinner class4 = (Spinner)(findViewById(R.id.class_4));
+            Spinner class5 = (Spinner)(findViewById(R.id.class_5));
+            Spinner class6 = (Spinner)(findViewById(R.id.class_6));
+            Spinner class7 = (Spinner)(findViewById(R.id.class_7));
+            String tempClass1 = ((String)(class1.getSelectedItem())).trim();
+            String tempClass2 = ((String)(class2.getSelectedItem())).trim();
+            String tempClass3 = ((String)(class3.getSelectedItem())).trim();
+            String tempClass4 = ((String)(class4.getSelectedItem())).trim();
+            String tempClass5 = ((String)(class5.getSelectedItem())).trim();
+            String tempClass6 = ((String)(class6.getSelectedItem())).trim();
+            String tempClass7 = ((String)(class7.getSelectedItem())).trim();
+            classes = new ArrayList<String>();
+            boolean classFlag = false;
+            if(!tempClass1.equals("none")) {
+                classes.add(tempClass1);
+            }
+            if(!tempClass2.equals("none")) {
+                classes.add(tempClass2);
+            }
+            if(!tempClass3.equals("none")) {
+                classes.add(tempClass3);
+            }
+            if(!tempClass4.equals("none")) {
+                classes.add(tempClass4);
+            }
+            if(!tempClass5.equals("none")) {
+                classes.add(tempClass5);
+            }
+            if(!tempClass6.equals("none")) {
+                classes.add(tempClass6);
+            }
+            if(!tempClass7.equals("none")) {
+                classes.add(tempClass7);
+            }
+            if(classes.size() == 0){
+                noClassSelectedError.show();
+            }
+            else{
+                classFlag = true;
+            }
+            if(classFlag) {
+                setContentView(R.layout.activity_preferences);
+                screenCount++;
+            }
         }
         else if(screenCount == 4) {
             //Do checks before changing screen (and stop the screen from changing if stuff isn't correct
             //Also screenCount should only increment when the screen actually changes, not before or that will screw things up
-            setContentView(R.layout.activity_time);
-            screenCount++;
+            RadioGroup genderPreference = (RadioGroup)(findViewById(R.id.studyGenderRadioGroup));
+            final int MALES = R.id.males;
+            final int FEMALES = R.id.females;
+            final int ANYONE = R.id.anyone;
+            CheckBox locJC = (CheckBox)(findViewById(R.id.check_jc));
+            CheckBox locFen = (CheckBox)(findViewById(R.id.check_fenwick));
+            CheckBox locMIX = (CheckBox)(findViewById(R.id.check_mix));
+            CheckBox locEngr = (CheckBox)(findViewById(R.id.check_engr));
+            CheckBox locDorm = (CheckBox)(findViewById(R.id.check_dorm));
+            CheckBox prefFlash = (CheckBox)(findViewById(R.id.check_flashcards));
+            CheckBox prefPract = (CheckBox)(findViewById(R.id.check_practiceproblems));
+            CheckBox prefLect = (CheckBox)(findViewById(R.id.check_lecture));
+            CheckBox prefTA = (CheckBox)(findViewById(R.id.check_officehours));
+            int tempGenderPreference = genderPreference.getCheckedRadioButtonId();
+            boolean tempLocJC = locJC.isChecked();
+            boolean tempLocFen = locFen.isChecked();
+            boolean tempLocMIX = locMIX.isChecked();
+            boolean tempLocEngr = locEngr.isChecked();
+            boolean tempLocDorm = locDorm.isChecked();
+            boolean tempPrefFlash = prefFlash.isChecked();
+            boolean tempPrefPract = prefPract.isChecked();
+            boolean tempPrefLect = prefLect.isChecked();
+            boolean tempPrefTA = prefTA.isChecked();
+            boolean genderPreferenceFlag = false;
+            boolean locationFlag = false;
+            boolean techniqueFlag = false;
+            String tempLocations = "";
+            String tempTechniques = "";
+            if(tempGenderPreference == MALES){
+                newGenderPreference = 'm';
+                genderPreferenceFlag = true;
+            }
+            else if(tempGenderPreference == FEMALES){
+                newGenderPreference = 'f';
+                genderPreferenceFlag = true;
+            }
+            else if(tempGenderPreference == ANYONE){
+                newGenderPreference = 'a';
+                genderPreferenceFlag = true;
+            }
+            else{
+                noGenderPreferenceError.show();
+            }
+            if(tempLocJC){
+                tempLocations += "j";
+                locationFlag = true;
+            }
+            if(tempLocFen){
+                tempLocations += "f";
+                locationFlag = true;
+            }
+            if(tempLocMIX){
+                tempLocations += "m";
+                locationFlag = true;
+            }
+            if(tempLocEngr){
+                tempLocations += "e";
+                locationFlag = true;
+            }
+            if(tempLocDorm){
+                tempLocations += "d";
+                locationFlag = true;
+            }
+            if(locationFlag){
+                newLocations = tempLocations;
+            }
+            else{
+                noLocationSelectedError.show();
+            }
+            if(tempPrefFlash){
+                tempTechniques += "f";
+                techniqueFlag = true;
+            }
+            if(tempPrefPract){
+                tempTechniques += "p";
+                techniqueFlag = true;
+            }
+            if(tempPrefLect){
+                tempTechniques += "l";
+                techniqueFlag = true;
+            }
+            if(tempPrefTA){
+                tempTechniques += "o";
+                techniqueFlag = true;
+            }
+            if(techniqueFlag){
+                newTechniques = tempTechniques;
+            }
+            else{
+                noTechniqueSelectedError.show();
+            }
+            if(genderPreferenceFlag && locationFlag && techniqueFlag) {
+                setContentView(R.layout.activity_time);
+                screenCount++;
+            }
         }
         else if(screenCount == 5) {
             //Do checks before changing screen (and stop the screen from changing if stuff isn't correct
             //Also screenCount should only increment when the screen actually changes, not before or that will screw things up
-            setContentView(R.layout.activity_time);
-            screenCount++;
+            byte checkCount = 0;
+            CheckBox m1 = (CheckBox)(findViewById(R.id.m_8_11AM));
+            CheckBox m2 = (CheckBox)(findViewById(R.id.m_11_2));
+            CheckBox m3 = (CheckBox)(findViewById(R.id.m_2_5));
+            CheckBox m4 = (CheckBox)(findViewById(R.id.m_5_8));
+            CheckBox m5 = (CheckBox)(findViewById(R.id.m_8_11PM));
+            CheckBox t1 = (CheckBox)(findViewById(R.id.t_8_11AM));
+            CheckBox t2 = (CheckBox)(findViewById(R.id.t_11_2));
+            CheckBox t3 = (CheckBox)(findViewById(R.id.t_2_5));
+            CheckBox t4 = (CheckBox)(findViewById(R.id.t_5_8));
+            CheckBox t5 = (CheckBox)(findViewById(R.id.t_8_11PM));
+            CheckBox w1 = (CheckBox)(findViewById(R.id.w_8_11AM));
+            CheckBox w2 = (CheckBox)(findViewById(R.id.w_11_2));
+            CheckBox w3 = (CheckBox)(findViewById(R.id.w_2_5));
+            CheckBox w4 = (CheckBox)(findViewById(R.id.w_5_8));
+            CheckBox w5 = (CheckBox)(findViewById(R.id.w_8_11PM));
+            CheckBox th1 = (CheckBox)(findViewById(R.id.th_8_11AM));
+            CheckBox th2 = (CheckBox)(findViewById(R.id.th_11_2));
+            CheckBox th3 = (CheckBox)(findViewById(R.id.th_2_5));
+            CheckBox th4 = (CheckBox)(findViewById(R.id.th_5_8));
+            CheckBox th5 = (CheckBox)(findViewById(R.id.th_8_11PM));
+            CheckBox f1 = (CheckBox)(findViewById(R.id.f_8_11AM));
+            CheckBox f2 = (CheckBox)(findViewById(R.id.f_11_2));
+            CheckBox f3 = (CheckBox)(findViewById(R.id.f_2_5));
+            CheckBox f4 = (CheckBox)(findViewById(R.id.f_5_8));
+            CheckBox f5 = (CheckBox)(findViewById(R.id.f_8_11PM));
+            CheckBox sa1 = (CheckBox)(findViewById(R.id.sa_8_11AM));
+            CheckBox sa2 = (CheckBox)(findViewById(R.id.sa_11_2));
+            CheckBox sa3 = (CheckBox)(findViewById(R.id.sa_2_5));
+            CheckBox sa4 = (CheckBox)(findViewById(R.id.sa_5_8));
+            CheckBox sa5 = (CheckBox)(findViewById(R.id.sa_8_11PM));
+            CheckBox su1 = (CheckBox)(findViewById(R.id.su_8_11AM));
+            CheckBox su2 = (CheckBox)(findViewById(R.id.su_11_2));
+            CheckBox su3 = (CheckBox)(findViewById(R.id.su_2_5));
+            CheckBox su4 = (CheckBox)(findViewById(R.id.su_5_8));
+            CheckBox su5 = (CheckBox)(findViewById(R.id.su_8_11PM));
+            String tempTimes = "";
+            boolean timeFlag = false;
+            if(m1.isChecked()){
+                tempTimes += "1";
+                timeFlag = true;
+            }
+            if(m2.isChecked()){
+                tempTimes += "2";
+                timeFlag = true;
+            }
+            if(m3.isChecked()){
+                tempTimes += "3";
+                timeFlag = true;
+            }
+            if(m4.isChecked()){
+                tempTimes += "4";
+                timeFlag = true;
+            }
+            if(m5.isChecked()){
+                tempTimes += "5";
+                timeFlag = true;
+            }
+            tempTimes += ".";
+            if(t1.isChecked()){
+                tempTimes += "1";
+                timeFlag = true;
+            }
+            if(t2.isChecked()){
+                tempTimes += "2";
+                timeFlag = true;
+            }
+            if(t3.isChecked()){
+                tempTimes += "3";
+                timeFlag = true;
+            }
+            if(t4.isChecked()){
+                tempTimes += "4";
+                timeFlag = true;
+            }
+            if(t5.isChecked()){
+                tempTimes += "5";
+                timeFlag = true;
+            }
+            tempTimes += ".";
+            if(w1.isChecked()){
+                tempTimes += "1";
+                timeFlag = true;
+            }
+            if(w2.isChecked()){
+                tempTimes += "2";
+                timeFlag = true;
+            }
+            if(w3.isChecked()){
+                tempTimes += "3";
+                timeFlag = true;
+            }
+            if(w4.isChecked()){
+                tempTimes += "4";
+                timeFlag = true;
+            }
+            if(w5.isChecked()){
+                tempTimes += "5";
+                timeFlag = true;
+            }
+            tempTimes += ".";
+            if(th1.isChecked()){
+                tempTimes += "1";
+                timeFlag = true;
+            }
+            if(th2.isChecked()){
+                tempTimes += "2";
+                timeFlag = true;
+            }
+            if(th3.isChecked()){
+                tempTimes += "3";
+                timeFlag = true;
+            }
+            if(th4.isChecked()){
+                tempTimes += "4";
+                timeFlag = true;
+            }
+            if(th5.isChecked()){
+                tempTimes += "5";
+                timeFlag = true;
+            }
+            tempTimes += ".";
+            if(f1.isChecked()){
+                tempTimes += "1";
+                timeFlag = true;
+            }
+            if(f2.isChecked()){
+                tempTimes += "2";
+                timeFlag = true;
+            }
+            if(f3.isChecked()){
+                tempTimes += "3";
+                timeFlag = true;
+            }
+            if(f4.isChecked()){
+                tempTimes += "4";
+                timeFlag = true;
+            }
+            if(f5.isChecked()){
+                tempTimes += "5";
+                timeFlag = true;
+            }
+            tempTimes += ".";
+            if(sa1.isChecked()){
+                tempTimes += "1";
+                timeFlag = true;
+            }
+            if(sa2.isChecked()){
+                tempTimes += "2";
+                timeFlag = true;
+            }
+            if(sa3.isChecked()){
+                tempTimes += "3";
+                timeFlag = true;
+            }
+            if(sa4.isChecked()){
+                tempTimes += "4";
+                timeFlag = true;
+            }
+            if(sa5.isChecked()){
+                tempTimes += "5";
+                timeFlag = true;
+            }
+            tempTimes += ".";
+            if(su1.isChecked()){
+                tempTimes += "1";
+                timeFlag = true;
+            }
+            if(su2.isChecked()){
+                tempTimes += "2";
+                timeFlag = true;
+            }
+            if(su3.isChecked()){
+                tempTimes += "3";
+                timeFlag = true;
+            }
+            if(su4.isChecked()){
+                tempTimes += "4";
+                timeFlag = true;
+            }
+            if(su5.isChecked()) {
+                tempTimes += "5";
+                timeFlag = true;
+            }
+            newTimes = tempTimes;
+            if(timeFlag) {
+                setContentView(R.layout.activity_order_preferences);
+                screenCount++;
+            }
+            else{
+                noTimeSelectedError.show();
+            }
         }
         else {
             //If screencount has incremented past 5 (made it to 6), the account creation process is over and its time to display the main menu
             //DON'T FORGET TO DO CHECKS FOR THE PREFERENCE ORDERING SCREEN HERE BEFORE FINISHING ACCOUNT CREATION PROCESS
-            //newAccount = new Account(put all data here);
-            //Intent mainMenu = new Intent(this, MainMenuActivity.class);
-            //Transfer all the account data over to main menu/save it to a file
-            //startActivity(mainMenu);
-            endOfProgramError.show();
+            Spinner preference1 = (Spinner)(findViewById(R.id.preference1));
+            Spinner preference2 = (Spinner)(findViewById(R.id.preference2));
+            Spinner preference3 = (Spinner)(findViewById(R.id.preference3));
+            Spinner preference4 = (Spinner)(findViewById(R.id.preference4));
+            String tempPreference1 = ((String)(preference1.getSelectedItem())).trim();
+            String tempPreference2 = ((String)(preference2.getSelectedItem())).trim();
+            String tempPreference3 = ((String)(preference3.getSelectedItem())).trim();
+            String tempPreference4 = ((String)(preference4.getSelectedItem())).trim();
+            newPreferenceOrder = new ArrayList<String>();
+            newPreferenceOrder.add(tempPreference1);
+            newPreferenceOrder.add(tempPreference2);
+            newPreferenceOrder.add(tempPreference3);
+            newPreferenceOrder.add(tempPreference4);
+            if(preference1.equals("none")){
+                noPreferenceSelectedError.show();
+            }
+            else {
+                //newAccount = new Account(put all data here);
+                //Intent mainMenu = new Intent(this, MainMenuActivity.class);
+                //Transfer all the account data over to main menu/save it to a file
+                //startActivity(mainMenu);
+            }
         }
     }
 

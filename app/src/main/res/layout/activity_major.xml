@@ -26,13 +26,13 @@
         android:layout_marginLeft="32dp"
         android:text="@string/text_year"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
+        app:layout_constraintBottom_toTopOf="@+id/yearRadioGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
-        android:id="@+id/radioGroup2"
+        android:id="@+id/yearRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
