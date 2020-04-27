@@ -59,6 +59,28 @@ public class MainMenuActivity extends AppCompatActivity {
             currentMatch = matchList.remove();
             matchName.setText(currentMatch.getName());
             matchMajor.setText(currentMatch.getMajor());
+            ArrayList<String> courses = currentMatch.getCourses();
+            if(courses.size() > 0){
+                matchClass1.setText(courses.get(0));
+            }
+            if(courses.size() > 1){
+                matchClass2.setText(courses.get(1));
+            }
+            if(courses.size() > 2){
+                matchClass3.setText(courses.get(2));
+            }
+            if(courses.size() > 3){
+                matchClass4.setText(courses.get(3));
+            }
+            if(courses.size() > 4){
+                matchClass5.setText(courses.get(4));
+            }
+            if(courses.size() > 5){
+                matchClass6.setText(courses.get(5));
+            }
+            if(courses.size() > 6){
+                matchClass7.setText(courses.get(6));
+            }
             currentAccount.addMatched(currentMatch.getUsername());
             currentMatch.addMatched(currentAccount.getUsername());
         }
