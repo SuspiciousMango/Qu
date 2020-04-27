@@ -84,6 +84,7 @@
         android:layout_height="wrap_content"
         android:background="@android:color/white"
         android:drawableTop="@drawable/ic_home_black_24dp"
+        android:onClick="logout"
         android:text="@string/Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

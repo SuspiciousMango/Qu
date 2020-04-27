@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
+
+import java.io.FileNotFoundException;
 
 public class MainMenuActivity extends AppCompatActivity {
 
@@ -23,5 +26,15 @@ public class MainMenuActivity extends AppCompatActivity {
         name.setText(currentAccount.getName());
         username.setText("(" + currentAccount.getUsername() + ")");
         major.setText(currentAccount.getMajor());
+    }
+
+    public void logout(View v) {
+        try {
+            QuSystem.writeAccountsToFile(openFileOutput("accounts.txt", MODE_PRIVATE));
+        }
+        catch(FileNotFoundException e){
+        }
+        Intent main = new Intent(this, MainActivity.class);
+        startActivity(main);
     }
 }
