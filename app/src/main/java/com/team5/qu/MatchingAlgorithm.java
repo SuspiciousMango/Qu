@@ -71,18 +71,16 @@ class MatchingAlgorithm
                         {
                         /*
                             Preferences[0] is the gender
+                            Gender is a simple character check
                             Preferences[2] is the location to meet
                             Preferences[3] is the study technique
-                            These 4 preferences are a simple character, so they can all be processed the same way.
-                            Check if the character is the same, and increases match rating if they are.
+                            Those 2 preferences are a single string, so each character of the string needs to be compared to every character of the other string
                             Preferences[1] is the available times, which is a full string and more complex.
                             Splits the string into the available times for each day. Then, for each day,
                             Finds out the number of available times that match up between the two users.
                             If no times match up, the two users will not be matched.
                          */
                             case 0:
-                            case 2:
-                            case 3:
                                 if (requestPreference.get(i).getChosenOptions().equals(otherPreferences.get(i).getChosenOptions()))
                                     matchRating += 1 * ((requestPreference.size()+1)-requestPreference.get(i).getWeight());
                                 break;
@@ -122,6 +120,19 @@ class MatchingAlgorithm
                                             hasMutualTimes = true;
                                             matchRating += 1 * ((requestPreference.size()+1)-requestPreference.get(i).getWeight());
                                         }
+                                    }
+                                }
+                                break;
+                            case 2:
+                            case 3:
+                                String requestingUserPreference = requestPreference.get(i).getChosenOptions();
+                                String otherUserPreference = otherPreferences.get(i).getChosenOptions();
+                                for (int n = 0; n < requestingUserPreference.length(); n++)
+                                {
+                                    for (int k = 0; k < otherUserPreference.length(); k++)
+                                    {
+                                        if (requestingUserPreference.charAt(n) == otherUserPreference.charAt(k))
+                                            matchRating += 1 * ((requestPreference.size()+1)-requestPreference.get(i).getWeight());
                                     }
                                 }
                                 break;
