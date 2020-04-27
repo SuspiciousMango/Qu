@@ -1,8 +1,10 @@
 package com.team5.qu;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.PriorityQueue;
@@ -10,19 +12,19 @@ import java.util.PriorityQueue;
 public class QuSystem
 {
     //Acc
-    protected static ArrayList<Account> accounts = new ArrayList<>();
+    private static ArrayList<Account> accounts = new ArrayList<>();
     private static AccountComparator accountComparator = new AccountComparator();
     //parent directory for all files
-    private static File parentDir;
+    //private static File parentDir;
 
     /**
      * Sets the parent directory, to store the file
      * @param parentDir  the parent directory value
      */
-    public static void setParentDir(File parentDir)
-    {
-        QuSystem.parentDir = parentDir;
-    }
+    //public static void setParentDir(File parentDir)
+    //{
+    //    QuSystem.parentDir = parentDir;
+    //}
 
 
     /**
@@ -126,14 +128,10 @@ public class QuSystem
     /**
      * Writes all the accounts stored into a file, for persistent storage
      */
-    public static void writeAccountsToFile()
+    public static void writeAccountsToFile(FileOutputStream f)
     {
         try{
-        File accountsFile = new File(parentDir, "accounts.txt");
-        if(!accountsFile.exists()){
-            accountsFile.delete();
-        }
-        FileWriter accountWriter = new FileWriter(accountsFile);
+        OutputStreamWriter accountWriter = new OutputStreamWriter(f);
         for (Account a : accounts)
         {
             accountWriter.write(Account.createFile(a));
@@ -142,6 +140,7 @@ public class QuSystem
         }
         catch (IOException e)
         {
+            System.out.println("Test");
         }
     }
 }

@@ -92,7 +92,8 @@ public Account(String name,String username, String password, String email,String
     preferences.add(new Preference(0.0, "study techniques", ""));
 
 }
-public Account(String [] info){
+public Account(String inputString){
+    String[] info = inputString.split("//");
     this.name=info[0];
     this.username=info[1];
     this.password=info[2];
@@ -526,7 +527,7 @@ public boolean confirmMatch(Account a){
 @Override
 public String toString() {
     // TODO Auto-generated method stub
-    return name;
+    return username;
 }
 /**
  * @param other the object to compare
