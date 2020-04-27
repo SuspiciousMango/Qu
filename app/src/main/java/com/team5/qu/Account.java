@@ -41,7 +41,7 @@ public class Account /*extends Comparable*/{
 //TODO Check for password:not needed
 
 
-/*
+
 public Account(String name,String username, String password, String email,String phoneNumber, String major, ArrayList<String> courses, int year, ArrayList<Preference> preferenceOrder){
     this.name=name;
     this.username=username;
@@ -53,7 +53,7 @@ public Account(String name,String username, String password, String email,String
     this.courses=courses;
     /*gender, meeting, times, location, study techniques
     */
-/*
+
     //*Edited by jayson to make UI integration easier
     preferences = preferenceOrder;
     //preferences.add(new Preference(0.0, "gender", ""));
@@ -63,7 +63,7 @@ public Account(String name,String username, String password, String email,String
     //*
 
 }
-*/
+
     /**
      *
      creates a new account with all the weights of the preferences set to 0
