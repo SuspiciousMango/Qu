@@ -42,27 +42,27 @@ public class Account /*extends Comparable*/{
 
 
 
-public Account(String name,String username, String password, String email,String phoneNumber, String major, ArrayList<String> courses, int year, ArrayList<Preference> preferenceOrder){
-    this.name=name;
-    this.username=username;
-    this.password=password;
-    this.email=email;
-    this.phoneNumber=phoneNumber;
-    this.major=major;
-    this.year=year;
-    this.courses=courses;
-    /*gender, meeting, times, location, study techniques
-    */
+    public Account(String name,String username, String password, String email,String phoneNumber, String major, ArrayList<String> courses, int year, ArrayList<Preference> preferenceOrder){
+        this.name=name;
+        this.username=username;
+        this.password=password;
+        this.email=email;
+        this.phoneNumber=phoneNumber;
+        this.major=major;
+        this.year=year;
+        this.courses=courses;
+        /*gender, meeting, times, location, study techniques
+         */
 
-    //*Edited by jayson to make UI integration easier
-    preferences = preferenceOrder;
-    //preferences.add(new Preference(0.0, "gender", ""));
-    //preferences.add(new Preference(0.0, "available times", ""));
-    //preferences.add(new Preference(0.0, "location to meet", ""));
-    //preferences.add(new Preference(0.0, "study techniques", ""));
-    //*
+        //*Edited by jayson to make UI integration easier
+        preferences = preferenceOrder;
+        //preferences.add(new Preference(0.0, "gender", ""));
+        //preferences.add(new Preference(0.0, "available times", ""));
+        //preferences.add(new Preference(0.0, "location to meet", ""));
+        //preferences.add(new Preference(0.0, "study techniques", ""));
+        //*
 
-}
+    }
 
     /**
      *
@@ -124,37 +124,37 @@ public Account(String name,String username, String password, String email,String
             rejected.add(s[i]);
         }
     }
-public Account(String []info){
+    public Account(String []info){
 
-    this.name=info[0];
-    this.username=info[1];
-    this.password=info[2];
-    this.email=info[3];
-    this.phoneNumber=info[4];
-    this.major=info[5];
-    this.year=Integer.valueOf(info[8]);
+        this.name=info[0];
+        this.username=info[1];
+        this.password=info[2];
+        this.email=info[3];
+        this.phoneNumber=info[4];
+        this.major=info[5];
+        this.year=Integer.valueOf(info[8]);
 
-    String [] s=info[6].replace("[","").replace("]","").replace(",","").split("\'");
-    String []temp=new String[s.length+1];
-    for(int i=0; i<s.length;i++){
-        temp[i]=s[i];
-    }
-    temp[s.length]="";
-    s=temp;
-    for(int i=0;i<(s.length/3);i++){
-    preferences.add(new Preference(Double.valueOf(s[i*3]),s[i*3+1],s[i*3+2]));
-    }
+        String [] s=info[6].replace("[","").replace("]","").replace(",","").split("\'");
+        String []temp=new String[s.length+1];
+        for(int i=0; i<s.length;i++){
+            temp[i]=s[i];
+        }
+        temp[s.length]="";
+        s=temp;
+        for(int i=0;i<(s.length/3);i++){
+            preferences.add(new Preference(Double.valueOf(s[i*3]),s[i*3+1],s[i*3+2]));
+        }
 
-    s=info[7].replace("[","").replace("]","").replace(" ","").split(",");
-    courses.ensureCapacity(s.length);
-    for(int i=0;i<s.length;i++){
-        courses.add(s[i]);
+        s=info[7].replace("[","").replace("]","").replace(" ","").split(",");
+        courses.ensureCapacity(s.length);
+        for(int i=0;i<s.length;i++){
+            courses.add(s[i]);
+        }
+        s=info[info.length-1].replace("[","").replace("]","").replace(" ","").split(",");
+        for(int i=0;i<s.length;i++){
+            rejected.add(s[i]);
+        }
     }
-    s=info[info.length-1].replace("[","").replace("]","").replace(" ","").split(",");
-    for(int i=0;i<s.length;i++){
-        rejected.add(s[i]);
-    }
-}
 
 /*
 //public Account(String name,String username, String email, String phoneNumber, String major,ArrayList<Preference> preferences, int year)
@@ -282,6 +282,14 @@ private Account(String name,String username, String email,String phoneNumber, St
     }
     public boolean isLocked(){
         return locked;
+    }
+    public void setLocked(){
+        if(locked){
+            locked=false;
+        }
+        else{
+            locked=true;
+        }
     }
 
 
