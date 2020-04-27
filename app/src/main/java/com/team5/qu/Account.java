@@ -627,10 +627,10 @@ return false;*/
         System.out.println(a.getPending());
         System.out.println(a.getConfirmed());
 
-
         System.out.println(a.getRejected());
-
-
+    }
+    public boolean checkPending(String s){
+        return Collections.binarySearch(pending, s)>=0;
     }
 }
 /*
