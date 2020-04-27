@@ -103,8 +103,8 @@ class MatchingAlgorithm
                                 {
                                     String requestingUserDay = requestingUserTimes[j];
                                     String otherUserDay = otherUserTimes[j];
-                                    int[] findRequestingCommonTimes = new int[4];
-                                    int[] findOtherCommonTimes = new int[4];
+                                    int[] findRequestingCommonTimes = new int[5];
+                                    int[] findOtherCommonTimes = new int[5];
                                     for (int k = 0; k < requestingUserDay.length(); k++)
                                     {
                                         findRequestingCommonTimes[(requestingUserDay.charAt(k) - '0')]++;
