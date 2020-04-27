@@ -38,10 +38,15 @@ public class MainMenuActivity extends AppCompatActivity {
         TextView matchName = findViewById(R.id.match_name);
         TextView matchMajor = findViewById(R.id.match_major);
         currentMatch = matchList.remove();
-        matchName.setText(currentMatch.getName());
-        matchMajor.setText(currentMatch.getMajor());
-        currentAccount.addMatched(currentMatch.getUsername());
-        currentMatch.addMatched(currentAccount.getUsername());
+        if(currentMatch == null){
+            matchName.setText("Queue Empty");
+        }
+        else {
+            matchName.setText(currentMatch.getName());
+            matchMajor.setText(currentMatch.getMajor());
+            currentAccount.addMatched(currentMatch.getUsername());
+            currentMatch.addMatched(currentAccount.getUsername());
+        }
     }
 
     public void likeUser(View v){
