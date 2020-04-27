@@ -99,26 +99,27 @@ class MatchingAlgorithm
                                     This happens for both the other user and the requesting user. After that array is
                                     created, compare the two arrays to see if both elements are 1.
                                  */
+                                int numMutualTimesFound = 0;
                                 for (j = 0; j < requestingUserTimes.length; j++)
                                 {
-                                    String requestingUserDay = requestingUserTimes[j];
-                                    String otherUserDay = otherUserTimes[j];
-                                    int[] findRequestingCommonTimes = new int[5];
-                                    int[] findOtherCommonTimes = new int[5];
-                                    for (int k = 0; k < requestingUserDay.length(); k++)
+                                    if (numMutualTimesFound < 2)
                                     {
-                                        findRequestingCommonTimes[(requestingUserDay.charAt(k) - '0')]++;
-                                    }
-                                    for (int k = 0; k < otherUserDay.length(); k++)
-                                    {
-                                        findOtherCommonTimes[(otherUserDay.charAt(k) - '0')]++;
-                                    }
-                                    for (int k = 0; k < findRequestingCommonTimes.length; k++)
-                                    {
-                                        if ((findRequestingCommonTimes[k] == 1) && (findOtherCommonTimes[k] == 1))
-                                        {
-                                            hasMutualTimes = true;
-                                            matchRating += 1 * ((requestPreference.size()+1)-requestPreference.get(i).getWeight());
+                                        String requestingUserDay = requestingUserTimes[j];
+                                        String otherUserDay = otherUserTimes[j];
+                                        int[] findRequestingCommonTimes = new int[5];
+                                        int[] findOtherCommonTimes = new int[5];
+                                        for (int k = 0; k < requestingUserDay.length(); k++) {
+                                            findRequestingCommonTimes[(requestingUserDay.charAt(k) - '0')]++;
+                                        }
+                                        for (int k = 0; k < otherUserDay.length(); k++) {
+                                            findOtherCommonTimes[(otherUserDay.charAt(k) - '0')]++;
+                                        }
+                                        for (int k = 0; k < findRequestingCommonTimes.length; k++) {
+                                            if ((findRequestingCommonTimes[k] == 1) && (findOtherCommonTimes[k] == 1)) {
+                                                hasMutualTimes = true;
+                                                matchRating += 1 * ((requestPreference.size() + 1) - requestPreference.get(i).getWeight());
+                                                numMutualTimesFound++;
+                                            }
                                         }
                                     }
                                 }
