@@ -1,5 +1,6 @@
 package com.team5.qu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -595,9 +596,9 @@ public class AccountCreateActivity extends AppCompatActivity {
                 }
                 catch(FileNotFoundException e){
                 }
-                //Intent mainMenu = new Intent(this, MainMenuActivity.class);
-                //Transfer all the account data over to main menu/save it to a file
-                //startActivity(mainMenu);
+                Intent mainMenu = new Intent(this, MainMenuActivity.class);
+                mainMenu.putExtra("CURRENT_ACCOUNT", newUsername);
+                startActivity(mainMenu);
             }
         }
     }

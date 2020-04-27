@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             else{
                 if(loginAttempt.getPassword().equals(pWord)){
                     Intent mainMenu = new Intent(this, MainMenuActivity.class);
+                    mainMenu.putExtra("CURRENT_ACCOUNT", loginAttempt.getUsername());
                     startActivity(mainMenu);
                 }
                 else{

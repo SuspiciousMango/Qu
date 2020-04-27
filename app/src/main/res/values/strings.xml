@@ -331,11 +331,12 @@
     <string name="Chat">Chat</string>
     <string name="Yes">Yes</string>
     <string name="No">No</string>
-    <string name="Home">Home</string>
+    <string name="Home">Logout</string>
     <string name="Matched">Matched</string>
     <string name="Settings">Settings</string>
     <string name="MyProfile">My Profile</string>
     <string name="text_classes">Wants a buddy for:</string>
+    <string name="text_identity">You are:</string>
 
 
 </resources>
