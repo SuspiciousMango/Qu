@@ -116,15 +116,15 @@ public class QuSystem
      */
     public static void informUserMatch(Account User1, Account User2)
     {
-        if (User1.acceptAccount(User2) && User2.acceptAccount(User2))
+        if (User1.acceptAccount(User2.getUsername()) && User2.acceptAccount(User1.getUsername()))
         {
-            User1.confirmMatch(User2);
-            User2.confirmMatch(User1);
+            User1.confirmMatch(User2.getUsername());
+            User2.confirmMatch(User1.getUsername());
         }
         else
         {
-            User1.rejectAccount(User2);
-            User2.rejectAccount(User1);
+            User1.rejectAccount(User2.getUsername());
+            User2.rejectAccount(User1.getUsername());
         }
     }
 
