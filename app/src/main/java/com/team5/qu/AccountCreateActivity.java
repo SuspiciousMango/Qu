@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class AccountCreateActivity extends AppCompatActivity {
@@ -75,7 +76,7 @@ public class AccountCreateActivity extends AppCompatActivity {
             if(tempUName.length() == 0){
                 usernameBlankError.show();
             }
-            else if(usernameAvailable(tempUName)) {
+            else if(QuSystem.checkAvailableAccount(tempUName)) {
                 newUsername = tempUName;
                 userFlag = true;
             }
@@ -573,7 +574,7 @@ public class AccountCreateActivity extends AppCompatActivity {
                 newPreferences.add(new Preference(0.0, "location to meet", newLocations));
                 newPreferences.add(new Preference(0.0, "study techniques", newTechniques));
                 for(int i = 0; i < newPreferenceOrder.size(); i++){
-                    String temp = newPreferenceOrder.remove(0);
+                    String temp = newPreferenceOrder.get(i);
                     if(temp.equals("Gender")){
                         newPreferences.get(0).setWeight(i + 1);
                     }
@@ -589,21 +590,15 @@ public class AccountCreateActivity extends AppCompatActivity {
                 }
                 newAccount = new Account(newName, newUsername, newPassword, newEmail, newPhoneNum, newMajor, courses, newYear, newPreferences);
                 QuSystem.addAccount(newAccount);
+                try {
+                    QuSystem.writeAccountsToFile(openFileOutput("accounts.txt", MODE_PRIVATE));
+                }
+                catch(FileNotFoundException e){
+                }
                 //Intent mainMenu = new Intent(this, MainMenuActivity.class);
                 //Transfer all the account data over to main menu/save it to a file
                 //startActivity(mainMenu);
             }
         }
-    }
-
-    private boolean usernameAvailable(String uName){
-        /*for(int i = 0; i < allAccounts.size(); i++){
-            Account temp = allAccounts.get(i);
-            if(temp.getUsername().equals(uName)){
-                return false;
-            }
-        }
-        */
-        return true;
     }
 }
