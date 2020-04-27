@@ -83,7 +83,7 @@ public class QuSystem
     }
 
     /**
-     * Gets a dummy account from a username
+     * Gets an account from a username
      * @param username  the username to find
      * @return  The dummy account associated with that username, or null if none is found.
      */
