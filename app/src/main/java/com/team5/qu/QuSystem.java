@@ -1,9 +1,12 @@
 package com.team5.qu;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -127,6 +130,7 @@ public class QuSystem
 
     /**
      * Writes all the accounts stored into a file, for persistent storage
+     * @param f the file to write to
      */
     public static void writeAccountsToFile(FileOutputStream f)
     {
@@ -141,6 +145,29 @@ public class QuSystem
         catch (IOException e)
         {
             System.out.println("Test");
+        }
+    }
+
+    /**
+     * Given a file, creates an arraylist of accounts.
+     * @param f the file to read from
+     */
+    public static void readAccountsFromFile(FileInputStream f)
+    {
+        try
+        {
+            BufferedReader accountReader = new BufferedReader(new InputStreamReader(f));
+            String accountLine = accountReader.readLine();
+            while (!accountLine.equals(""))
+            {
+                Account a = new Account(accountLine);
+                addAccount(a);
+                accountLine = accountReader.readLine();
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
         }
     }
 }
