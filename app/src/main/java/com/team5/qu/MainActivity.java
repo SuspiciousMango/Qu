@@ -61,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
         //log user in if so, display error otherwise
         else {
             Account loginAttempt = QuSystem.getAccountFromUsername(username.getText().toString().trim());
+            if(loginAttempt == null){
+                loginError.show();
+                return;
+            }
             //if loginCount > 5, do not allow any more attempts with the given username
             if(loginCount > 5){
                 accountLock.show();
@@ -81,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
                     loginCount++;
                 }
             }
-            loginError.show();
         }
     }
 
