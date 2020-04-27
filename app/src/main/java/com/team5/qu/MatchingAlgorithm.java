@@ -115,7 +115,7 @@ class MatchingAlgorithm
                                             findOtherCommonTimes[(otherUserDay.charAt(k) - '0')]++;
                                         }
                                         for (int k = 0; k < findRequestingCommonTimes.length; k++) {
-                                            if ((findRequestingCommonTimes[k] == 1) && (findOtherCommonTimes[k] == 1)) {
+                                            if ((findRequestingCommonTimes[k] == 1) && (findOtherCommonTimes[k] == 1) && (numMutualTimesFound < 2)) {
                                                 hasMutualTimes = true;
                                                 matchRating += 1 * ((requestPreference.size() + 1) - requestPreference.get(i).getWeight());
                                                 numMutualTimesFound++;
@@ -142,7 +142,7 @@ class MatchingAlgorithm
                 }
                 // If the other user passes an arbitrary match rating and has mutual times, they are added to the matched
                 // users list.
-                if (matchRating >= 8 && hasMutualTimes)
+                if (matchRating >= 16 && hasMutualTimes)
                 {
                     matchedUsers.add(otherAccount);
                 }
