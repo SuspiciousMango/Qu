@@ -46,6 +46,7 @@ public class MainMenuActivity extends AppCompatActivity {
         TextView matchClass6 = findViewById(R.id.text_class_6);
         TextView matchClass7 = findViewById(R.id.text_class_7);
         if(matchList.size() < 1){
+            currentMatch = null;
             matchTitle.setVisibility(View.INVISIBLE);
             matchName.setText("Queue Empty");
             matchMajor.setText("");
@@ -90,17 +91,21 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     public void likeUser(View v){
-        currentAccount.acceptAccount(currentMatch.getUsername());
-        if(currentAccount.checkPending(currentMatch.getUsername()) && currentMatch.checkPending(currentAccount.getUsername())){
-            currentAccount.confirmMatch(currentMatch.getUsername());
-            currentMatch.confirmMatch(currentAccount.getUsername());
+        if(currentMatch != null) {
+            currentAccount.acceptAccount(currentMatch.getUsername());
+            if (currentAccount.checkPending(currentMatch.getUsername()) && currentMatch.checkPending(currentAccount.getUsername())) {
+                currentAccount.confirmMatch(currentMatch.getUsername());
+                currentMatch.confirmMatch(currentAccount.getUsername());
+            }
+            getNextMatch();
         }
-        getNextMatch();
     }
 
     public void dislikeUser(View v){
-        currentAccount.rejectAccount(currentMatch.getUsername());
-        getNextMatch();
+        if(currentMatch != null) {
+            currentAccount.rejectAccount(currentMatch.getUsername());
+            getNextMatch();
+        }
     }
 
     public void showMatchesScreen(View v){
