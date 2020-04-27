@@ -601,7 +601,9 @@ return false;*/
         String [] s=str.replace("[","").replace("]","").replace(" ","").split(",");
         ArrayList<String> list=new ArrayList<>(s.length);
         for(int i=0;i<s.length;i++){
-            list.add(s[i]);
+            if(s[i].length() > 0) {
+                list.add(s[i]);
+            }
         }
         return list;
     }
