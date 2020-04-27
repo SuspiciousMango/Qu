@@ -85,8 +85,8 @@ class MatchingAlgorithm
                                     matchRating += 1 * ((requestPreference.size()+1)-requestPreference.get(i).getWeight());
                                 break;
                             case 1:
-                                String[] requestingUserTimes = requestPreference.get(i).getChosenOptions().split(",");
-                                String[] otherUserTimes = otherPreferences.get(i).getChosenOptions().split(",");
+                                String[] requestingUserTimes = requestPreference.get(i).getChosenOptions().split(":");
+                                String[] otherUserTimes = otherPreferences.get(i).getChosenOptions().split(":");
                                 int j;
                                 /*
                                     Both the arrays should be of size 7, where each entry is the available times
