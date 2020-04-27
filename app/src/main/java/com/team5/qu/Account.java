@@ -124,7 +124,7 @@ public Account(String name,String username, String password, String email,String
             rejected.add(s[i]);
         }
     }
-/*public Account(String []info){
+public Account(String []info){
 
     this.name=info[0];
     this.username=info[1];
@@ -154,7 +154,7 @@ public Account(String name,String username, String password, String email,String
     for(int i=0;i<s.length;i++){
         rejected.add(s[i]);
     }
-}*/
+}
 
 /*
 //public Account(String name,String username, String email, String phoneNumber, String major,ArrayList<Preference> preferences, int year)
