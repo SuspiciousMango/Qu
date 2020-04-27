@@ -339,4 +339,13 @@
     <string name="text_identity">You are:</string>
 
 
+    <!--matched page-->
+    <string name="matched_page_intro">Contact your partners to set up a study session!</string>
+    <string name="match_first">Your first match:</string>
+    <string name="match_second">Your second match:</string>
+    <string name="match_third">Your third match:</string>
+    <string name="match_fourth">Your fourth match:</string>
+
+
+
 </resources>
