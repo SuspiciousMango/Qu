@@ -415,7 +415,7 @@ private Account(String name,String username, String email,String phoneNumber, St
      * @param reject the reject to add
      */
     private boolean addRejected(String reject) {
-        rejected.add(Collections.binarySearch(rejected, reject),reject);
+        insertSorted(rejected, reject);
         return true;
     }
     /**
