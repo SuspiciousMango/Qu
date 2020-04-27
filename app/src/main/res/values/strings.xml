@@ -335,8 +335,9 @@
     <string name="Matched">Matched</string>
     <string name="Settings">Settings</string>
     <string name="MyProfile">My Profile</string>
-    <string name="text_classes">Wants a buddy for:</string>
     <string name="text_identity">You are:</string>
+    <string name="text_other_identity">They are:</string>
+    <string name="text_classes">Wants a buddy for:</string>
 
 
     <!--matched page-->
@@ -345,6 +346,7 @@
     <string name="match_second">Your second match:</string>
     <string name="match_third">Your third match:</string>
     <string name="match_fourth">Your fourth match:</string>
+    <string name="action_return_to_menu">Back</string>
 
 
 

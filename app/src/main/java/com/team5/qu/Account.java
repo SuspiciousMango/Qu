@@ -437,7 +437,7 @@ boolean inRejected=Collections.binarySearch(rejected,match.getName())<0;
             return false;
         }
 //if(inMatched&&inConfirmed&&inPending&&inRejected){
-        insertSorted(matched,match);
+        matched.add(match);
 
 //if String was given instead, could match through here
 //match.addMatched(this);
@@ -631,6 +631,14 @@ return false;*/
         System.out.println(a.getRejected());
 
 
+    }
+
+    /**
+     * method added by jayson
+     * checks if user s is on the current pending list
+     */
+    public boolean checkPending(String s){
+        return pending.indexOf(s) >= 0;
     }
 }
 /*
