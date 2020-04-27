@@ -35,7 +35,7 @@ class MatchingAlgorithm
         for (Account otherAccount : accounts)
         {
             // Check if the user already accepted or rejected the other user. If they have, skip them
-            int pendingCheck = Collections.binarySearch(requestingUser.getPending(), otherAccount.getUsername();
+            int pendingCheck = Collections.binarySearch(requestingUser.getPending(), otherAccount.getUsername());
             int confirmCheck = Collections.binarySearch(requestingUser.getConfirmed(), otherAccount.getUsername());
             int rejectCheck = Collections.binarySearch(requestingUser.getRejected(), otherAccount.getUsername());
             boolean notInArray = (pendingCheck < 0) && (confirmCheck < 0) && (rejectCheck < 0);
