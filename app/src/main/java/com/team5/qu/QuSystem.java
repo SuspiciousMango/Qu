@@ -160,7 +160,7 @@ public class QuSystem
             String accountLine = accountReader.readLine();
             while (!accountLine.equals(""))
             {
-                Account a = new Account(accountLine);
+                Account a = new Account(accountLine.split("//"));
                 addAccount(a);
                 accountLine = accountReader.readLine();
             }
