@@ -114,15 +114,11 @@ public class Account /*extends Comparable*/{
             preferences.add(new Preference(Double.valueOf(s[i*3]),s[i*3+1],s[i*3+2]));
         }
 
-        s=info[7].replace("[","").replace("]","").replace(" ","").split(",");
-        courses.ensureCapacity(s.length);
-        for(int i=0;i<s.length;i++){
-            courses.add(s[i]);
-        }
-        s=info[info.length-1].replace("[","").replace("]","").replace(" ","").split(",");
-        for(int i=0;i<s.length;i++){
-            rejected.add(s[i]);
-        }
+        this.courses=parseString(info[7]);
+        this.matched=parseString(info[9]);
+        this.pending=parseString(info[10]);
+        this.confirmed=parseString(info[11]);
+        this.rejected=parseString(info[12]);
     }
     public Account(String []info){
 
@@ -145,15 +141,11 @@ public class Account /*extends Comparable*/{
             preferences.add(new Preference(Double.valueOf(s[i*3]),s[i*3+1],s[i*3+2]));
         }
 
-        s=info[7].replace("[","").replace("]","").replace(" ","").split(",");
-        courses.ensureCapacity(s.length);
-        for(int i=0;i<s.length;i++){
-            courses.add(s[i]);
-        }
-        s=info[info.length-1].replace("[","").replace("]","").replace(" ","").split(",");
-        for(int i=0;i<s.length;i++){
-            rejected.add(s[i]);
-        }
+        this.courses=parseString(info[7]);
+        this.matched=parseString(info[9]);
+        this.pending=parseString(info[10]);
+        this.confirmed=parseString(info[11]);
+        this.rejected=parseString(info[12]);
     }
 
 /*
@@ -605,6 +597,14 @@ return false;*/
         s+=a.getYear()+"//"+a.getMatched().toString()+"//"+a.getPending().toString()+"//"+a.getConfirmed().toString()+"//"+a.getRejected().toString()+"\n";
         return s;
     }
+    public ArrayList<String> parseString(String str){
+        String [] s=str.replace("[","").replace("]","").replace(" ","").split(",");
+        ArrayList<String> list=new ArrayList<>(s.length);
+        for(int i=0;i<s.length;i++){
+            list.add(s[i]);
+        }
+        return list;
+    }
 
     public void printAll(){
         Account a=this;
@@ -621,13 +621,15 @@ return false;*/
 
         System.out.println(a.getCourses());
         System.out.println(a.getPreferences());
-        System.out.println(a.getConfirmed());
+
+        System.out.println(a.getMatched());
 
         System.out.println(a.getPending());
+        System.out.println(a.getConfirmed());
+
 
         System.out.println(a.getRejected());
 
-        System.out.println(a.getMatched());
 
     }
 }
