@@ -415,7 +415,7 @@ private Account(String name,String username, String email,String phoneNumber, St
      * @param reject the reject to add
      */
     private boolean addRejected(String reject) {
-        insertSorted(rejected, reject);
+        insertSorted(rejected,reject);
         return true;
     }
     /**
@@ -629,18 +629,10 @@ return false;*/
         System.out.println(a.getPending());
         System.out.println(a.getConfirmed());
 
-
         System.out.println(a.getRejected());
-
-
     }
-
-    /**
-     * method added by jayson
-     * checks if user s is on the current pending list
-     */
     public boolean checkPending(String s){
-        return pending.indexOf(s) >= 0;
+        return Collections.binarySearch(pending, s)>=0;
     }
 }
 /*
