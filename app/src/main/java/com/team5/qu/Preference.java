@@ -45,7 +45,7 @@ public class Preference {
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return "["+name+","+weight+","+chosenOptions+"]";
+        return weight+"\'"+name+"\'"+chosenOptions+"\'";
     }
 @Override
 protected Preference clone() throws CloneNotSupportedException {

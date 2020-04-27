@@ -3,8 +3,6 @@ package com.team5.qu;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
-
 //would have been smarter to have made a class with display info...
 public class Account /*extends Comparable*/{
     
@@ -24,7 +22,7 @@ private ArrayList<Preference> preferences=new ArrayList<>();
 private ArrayList<String> rejected=new ArrayList<>();
 
 
-private ArrayList<String> courses;
+private ArrayList<String> courses=new ArrayList<>();
 private String name;
 private String username;
 private String password="";
@@ -41,6 +39,28 @@ private AccountComparator c= new AccountComparator();
 
 //TODO Check for password:not needed
 
+
+public Account(String name,String username, String password, String email,String phoneNumber, String major, ArrayList<String> courses, int year, ArrayList<Preference> preferenceOrder){
+    this.name=name;
+    this.username=username;
+    this.password=password;
+    this.email=email;
+    this.phoneNumber=phoneNumber;
+    this.major=major;
+    this.year=year;
+    this.courses=courses;
+    /*gender, meeting, times, location, study techniques
+    */
+
+    //*Edited by jayson to make UI integration easier
+    preferences = preferenceOrder;
+    //preferences.add(new Preference(0.0, "gender", ""));
+    //preferences.add(new Preference(0.0, "available times", ""));
+    //preferences.add(new Preference(0.0, "location to meet", ""));
+    //preferences.add(new Preference(0.0, "study techniques", ""));
+    //*
+
+}
 /**
  *  
     creates a new account with all the weights of the preferences set to 0
@@ -53,29 +73,51 @@ private AccountComparator c= new AccountComparator();
     @param major current major
     @param year year enrolled
     */
-public Account(String name,String username, String password, String email,String phoneNumber, String major, ArrayList<String> courses, int year, ArrayList<Preference> preferenceOrder){
+public Account(String name,String username, String password, String email,String phoneNumber, String major, ArrayList<String> courses, int year){
     this.name=name;
     this.username=username;
     this.password=password;
     this.email=email;
     this.phoneNumber=phoneNumber;
     this.major=major;
-    this.year=year;
     this.courses=courses;
+    this.year=year;
     /*gender, meeting, times, location, study techniques
 
     */
-
-    //*Edited by jayson to make UI integration easier
-    preferences = preferenceOrder;
-    //preferences.add(new Preference(0.0, "gender", ""));
-    //preferences.add(new Preference(0.0, "available times", ""));
-    //preferences.add(new Preference(0.0, "location to meet", ""));
-    //preferences.add(new Preference(0.0, "study techniques", ""));
-    //*
+    
+    preferences.add(new Preference(0.0, "gender", ""));
+    preferences.add(new Preference(0.0, "available times", ""));
+    preferences.add(new Preference(0.0, "location to meet", ""));
+    preferences.add(new Preference(0.0, "study techniques", ""));
 
 }
-
+public Account(String [] info){
+    this.name=info[0];
+    this.username=info[1];
+    this.password=info[2];
+    this.email=info[3];
+    this.phoneNumber=info[4];
+    this.major=info[5];
+    this.year=Integer.valueOf(info[8]);
+    
+    String [] s=info[6].replace("[","").replace("]","").replace(",","").split("\'");
+    String []temp=new String[s.length+1];
+    for(int i=0; i<s.length;i++){
+        temp[i]=s[i];
+    }
+    temp[s.length]="";
+    s=temp;
+    for(int i=0;i<(s.length/3);i++){
+    preferences.add(new Preference(Double.valueOf(s[i*3]),s[i*3+1],s[i*3+2]));
+    }
+    s=info[7].replace("[","").replace("]","").replace(" ","").split(",");
+    courses.ensureCapacity(s.length);
+    for(int i=0;i<s.length;i++){
+        courses.add(s[i]);
+    }
+    
+}
 /*
 //public Account(String name,String username, String email, String phoneNumber, String major,ArrayList<Preference> preferences, int year)
 public Account createDummyAccount(){    
@@ -281,6 +323,11 @@ public boolean setPreference(Preference preference) {
     }
     return false;
 }
+public void setPreference(ArrayList<Preference> preference) {
+    for(int i=0;i<preference.size();i++){
+        setPreference(preference.get(i));
+    }
+}
 /************************************************************************* */
 
 private void insertSorted(ArrayList<Account> list,Account a) {
@@ -340,34 +387,23 @@ private boolean addRejected(String reject) {
 public boolean addMatched(Account match) {
     //people they match with that they haven't confirmed or deny
 
-    /*
-matched=new ArrayList<>();
-
-//waits until both sides say yes
-pending=new ArrayList<>();
-
-//people that they have confirmed match 
-confirmed=new ArrayList<>();
-
-//the people that were rejected
-rejected
-
-*/
+/*
 boolean inMatched=Collections.binarySearch(matched,match, c)<0;
 boolean inConfirmed=Collections.binarySearch(confirmed,match, c)<0;
 boolean inPending=Collections.binarySearch(pending,match, c)<0;
 boolean inRejected=Collections.binarySearch(rejected,match.getName())<0;
+*/
 if(this.equals(match)){
     return false;
 }
-if(inMatched&&inConfirmed&&inPending&&inRejected){
+//if(inMatched&&inConfirmed&&inPending&&inRejected){
 insertSorted(matched,match);
 
 //if account was given instead, could match through here
 //match.addMatched(this);
     return true;
-}
-return false;
+/*}
+return false;*/
 
 }
 /**
@@ -505,23 +541,45 @@ public boolean equals(Object other) {
         Account o = (Account) other;
         return o.getUsername().equals(username);
     }
-    
+/*
 public static Account createAccount(String a) {
     return null;
-}
+}*/
 public static String createFile(Account a) {
-    String s=a.getName()+"|";
-    s+=a.getUsername()+"|";
-    s+=a.getPassword()+"|";
-    s+=a.getEmail()+"|";
-    s+=a.getPhoneNumber()+"|";
-    s+=a.getMajor()+"|";
-    s+=a.getPreferences().toString()+"|";
-    s+=a.getCourses()+"|";
-    s+=Integer.toString(a.getYear())+"|"+a.getMatched().toString()+"|"+a.getPending().toString()+"|"+a.getConfirmed().toString()+"|"+a.getRejected().toString()+"\n";
+    String s=a.getName()+"//";
+    s+=a.getUsername()+"//";
+    s+=a.getPassword()+"//";
+    s+=a.getEmail()+"//";
+    s+=a.getPhoneNumber()+"//";
+    s+=a.getMajor()+"//";
+    s+=a.getPreferences().toString()+"//";
+    s+=a.getCourses()+"//";
+    s+=a.getYear()+"//"+a.getMatched().toString()+"//"+a.getPending().toString()+"//"+a.getConfirmed().toString()+"//"+a.getRejected().toString()+"\n";
     return s;
 }
-
+public void printAll(){
+    Account a=this;
+    System.out.println(a.getEmail()); 
+    System.out.println(a.getMajor());
+    System.out.println(a.getName());
+    System.out.println(a.getPassword());
+    System.out.println(a.getPhoneNumber());
+    System.out.println(a.getUsername());
+    System.out.println(a.getYear());
+    
+    
+    System.out.println(a.getCourses());
+    System.out.println(a.getPreferences());
+    System.out.println(a.getConfirmed()); 
+        
+    System.out.println(a.getPending()); 
+    
+    System.out.println(a.getRejected()); 
+    
+    
+    System.out.println(a.getMatched());  
+    
+}
 }
 /*
 public void insert(ArrayList<Account> ,int x){
