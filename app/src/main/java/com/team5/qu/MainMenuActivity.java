@@ -60,7 +60,8 @@ public class MainMenuActivity extends AppCompatActivity {
         }
         else {
             matchTitle.setVisibility(View.VISIBLE);
-            currentMatch = matchList.remove();
+            Account tempMatch = matchList.remove();
+            currentMatch = QuSystem.getAccountFromUsername(tempMatch.getUsername());
             matchName.setText(currentMatch.getName());
             matchMajor.setText(currentMatch.getMajor());
             ArrayList<String> courses = currentMatch.getCourses();
@@ -109,6 +110,7 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     public void showMatchesScreen(View v){
+        setContentView(R.layout.activity_matchedlist);
         TextView name1 = findViewById(R.id.matched_first_name);
         TextView name2 = findViewById(R.id.matched_second_name);
         TextView name3 = findViewById(R.id.matched_third_name);
@@ -150,7 +152,6 @@ public class MainMenuActivity extends AppCompatActivity {
             phone4.setText(temp.getPhoneNumber());
             email4.setText(temp.getEmail());
         }
-        setContentView(R.layout.activity_matchedlist);
     }
 
     public void backToMenu(View v){
