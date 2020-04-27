@@ -37,11 +37,26 @@ public class MainMenuActivity extends AppCompatActivity {
     private void getNextMatch(){
         TextView matchName = findViewById(R.id.match_name);
         TextView matchMajor = findViewById(R.id.match_major);
-        currentMatch = matchList.remove();
-        if(currentMatch == null){
+        TextView matchClass1 = findViewById(R.id.text_class_1);
+        TextView matchClass2 = findViewById(R.id.text_class_2);
+        TextView matchClass3 = findViewById(R.id.text_class_3);
+        TextView matchClass4 = findViewById(R.id.text_class_4);
+        TextView matchClass5 = findViewById(R.id.text_class_5);
+        TextView matchClass6 = findViewById(R.id.text_class_6);
+        TextView matchClass7 = findViewById(R.id.text_class_7);
+        if(matchList.size() < 1){
             matchName.setText("Queue Empty");
+            matchMajor.setText("");
+            matchClass1.setText("");
+            matchClass2.setText("");
+            matchClass3.setText("");
+            matchClass4.setText("");
+            matchClass5.setText("");
+            matchClass6.setText("");
+            matchClass7.setText("");
         }
         else {
+            currentMatch = matchList.remove();
             matchName.setText(currentMatch.getName());
             matchMajor.setText(currentMatch.getMajor());
             currentAccount.addMatched(currentMatch.getUsername());
