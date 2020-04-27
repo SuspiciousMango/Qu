@@ -11,6 +11,8 @@ import android.widget.EditText;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //QuSystem.setParentDir(dataLoc);
+        FileInputStream inputData;
+        try {
+            inputData = openFileInput("accounts.txt");
+            QuSystem.readAccountsFromFile(inputData);
+        }
+        catch(FileNotFoundException e){
+        }
     }
 
     /**
@@ -51,33 +60,27 @@ public class MainActivity extends AppCompatActivity {
         //check if username and password match an existing account
         //log user in if so, display error otherwise
         else {
-            /*for(int i = 0; i < allAccounts.size(); i++){
-                Account temp = allAccounts.get(i);
-                if(temp.getUserName().equals(uName){
-                    //if loginCount > 5, do not allow any more attempts with the given username
-                    if(loginCount > 5){
-                        accountLock.show();
-                        temp.setLocked();
-                    }
-                    //if account is locked, do not allow login
-                    if(temp.isLocked()){
-                        accountLockError.show();
-                    }
-                    else{
-                        if(temp.getPassword().equals(pWord)){
-                            Intent mainMenu = new Intent(this, MainMenuActivity.class);
-                            //Pass all account data to mainMenu intent
-                            startActivity(mainMenu);
-                        }
-                       else{
-                            loginPWError.show();
-                            loginCount++;
-                        }
-                    }
+            Account loginAttempt = QuSystem.getAccountFromUsername(username.getText().toString().trim());
+            //if loginCount > 5, do not allow any more attempts with the given username
+            if(loginCount > 5){
+                accountLock.show();
+                loginAttempt.setLocked();
+            }
+            //if account is locked, do not allow login
+            if(loginAttempt.isLocked()){
+                accountLockError.show();
+            }
+            else{
+                if(loginAttempt.getPassword().equals(pWord)){
+                    Intent mainMenu = new Intent(this, MainMenuActivity.class);
+                    startActivity(mainMenu);
                 }
-            */
+                else{
+                    loginPWError.show();
+                    loginCount++;
+                }
+            }
             loginError.show();
-
         }
     }
 
