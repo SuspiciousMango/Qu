@@ -406,7 +406,7 @@ private Account(String name,String username, String email,String phoneNumber, St
 
         int x=Collections.binarySearch(rejected, reject);
         if(x>=0){
-            confirmed.remove(x);
+            rejected.remove(x);
             return true;
         }
         return false;
@@ -450,11 +450,11 @@ return false;*/
      * @param match the matched to remove
      */
     private boolean removeMatched(String match) {
-
-        int x=Collections.binarySearch(matched,match);
-        if(x>=0){
-            confirmed.remove(x);
-            return true;
+        for(int i=0;i<matched.size();i++){
+            if(matched.get(i).equals(match)){
+                matched.remove(match);
+                return true;
+            }
         }
         return false;
     }
@@ -473,7 +473,7 @@ return false;*/
 
         int x=Collections.binarySearch(pending, pend);
         if(x>=0){
-            confirmed.remove(x);
+            pending.remove(x);
             return true;
         }
         return false;
