@@ -13,6 +13,9 @@ import com.google.android.material.snackbar.Snackbar;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,6 +43,16 @@ public class MainActivity extends AppCompatActivity {
      * Called when the user clicks the sign-in button
      */
     public void login(View v) {
+        /*Debug code to clear text files in case of emergency hooked up to the login button for easy access
+        try{
+            FileOutputStream debugStream = openFileOutput("accounts.txt", MODE_PRIVATE);
+            OutputStreamWriter accountWriter = new OutputStreamWriter(debugStream);
+            accountWriter.write("");
+            accountWriter.close();
+        }
+        catch (IOException e) {
+        }
+         //*/
         EditText username = (EditText)(findViewById(R.id.username));
         EditText password = (EditText)(findViewById(R.id.password));
         Snackbar usernameError = Snackbar.make(v, "ERROR: Username cannot be left blank", Snackbar.LENGTH_LONG);
