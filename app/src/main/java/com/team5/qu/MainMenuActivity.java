@@ -35,7 +35,6 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     private void getNextMatch(){
-        TextView matchTitle = findViewById(R.id.matchTitle);
         TextView matchName = findViewById(R.id.match_name);
         TextView matchMajor = findViewById(R.id.match_major);
         TextView matchClass1 = findViewById(R.id.text_class_1);
@@ -46,7 +45,6 @@ public class MainMenuActivity extends AppCompatActivity {
         TextView matchClass6 = findViewById(R.id.text_class_6);
         TextView matchClass7 = findViewById(R.id.text_class_7);
         if(matchList.size() < 1){
-            matchTitle.setVisibility(View.INVISIBLE);
             matchName.setText("Queue Empty");
             matchMajor.setText("");
             matchClass1.setText("");
@@ -58,7 +56,6 @@ public class MainMenuActivity extends AppCompatActivity {
             matchClass7.setText("");
         }
         else {
-            matchTitle.setVisibility(View.VISIBLE);
             currentMatch = matchList.remove();
             matchName.setText(currentMatch.getName());
             matchMajor.setText(currentMatch.getMajor());
