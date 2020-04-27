@@ -418,7 +418,7 @@ public class AccountCreateActivity extends AppCompatActivity {
                 tempTimes += "4";
                 timeFlag = true;
             }
-            tempTimes += ".";
+            tempTimes += ":";
             if(t1.isChecked()){
                 tempTimes += "0";
                 timeFlag = true;
@@ -439,7 +439,7 @@ public class AccountCreateActivity extends AppCompatActivity {
                 tempTimes += "4";
                 timeFlag = true;
             }
-            tempTimes += ".";
+            tempTimes += ":";
             if(w1.isChecked()){
                 tempTimes += "0";
                 timeFlag = true;
@@ -460,7 +460,7 @@ public class AccountCreateActivity extends AppCompatActivity {
                 tempTimes += "4";
                 timeFlag = true;
             }
-            tempTimes += ".";
+            tempTimes += ":";
             if(th1.isChecked()){
                 tempTimes += "0";
                 timeFlag = true;
@@ -481,7 +481,7 @@ public class AccountCreateActivity extends AppCompatActivity {
                 tempTimes += "4";
                 timeFlag = true;
             }
-            tempTimes += ".";
+            tempTimes += ":";
             if(f1.isChecked()){
                 tempTimes += "0";
                 timeFlag = true;
@@ -502,7 +502,7 @@ public class AccountCreateActivity extends AppCompatActivity {
                 tempTimes += "4";
                 timeFlag = true;
             }
-            tempTimes += ".";
+            tempTimes += ":";
             if(sa1.isChecked()){
                 tempTimes += "0";
                 timeFlag = true;
@@ -523,7 +523,7 @@ public class AccountCreateActivity extends AppCompatActivity {
                 tempTimes += "4";
                 timeFlag = true;
             }
-            tempTimes += ".";
+            tempTimes += ":";
             if(su1.isChecked()){
                 tempTimes += "0";
                 timeFlag = true;

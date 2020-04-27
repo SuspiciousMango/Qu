@@ -31,7 +31,7 @@ public class MainMenuActivity extends AppCompatActivity {
         username.setText("(" + currentAccount.getUsername() + ")");
         major.setText(currentAccount.getMajor());
         matchList = QuSystem.matchUsers(currentAccount);
-        getNextMatch();
+        //getNextMatch();
     }
 
     private void getNextMatch(){
