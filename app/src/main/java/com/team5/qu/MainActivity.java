@@ -47,10 +47,11 @@ public class MainActivity extends AppCompatActivity {
         try{
             FileOutputStream debugStream = openFileOutput("accounts.txt", MODE_PRIVATE);
             OutputStreamWriter accountWriter = new OutputStreamWriter(debugStream);
-            accountWriter.write("TestName//TestAccount//test//test@example.com//1234567890//Computer Science (BS)//[4.0'gender'a', 2.0'available times'2:01234:2:2:2:01234:2', 1.0'location to meet'jfmedo', 3.0'study techniques'fplo']//[CS 112, CS 211, CS 222, CS 262, CS 306, CS 310, CS 499]//2//[]//[]//[]//[]\n");
-            accountWriter.write("TestName2//TestAccount2//test//test2@example.com//0987654321//Computer Science (BS)//[4.0'gender'a', 2.0'available times'2:01234:2:2:2:01234:2', 1.0'location to meet'jfmedo', 3.0'study techniques'fplo']//[CS 112, CS 211, CS 222, CS 262, CS 306, CS 310, CS 499]//2//[]//[]//[]//[]\n");
-            accountWriter.write("TestName3//TestAccount3//test//test3@example.com//0000000000//Computer Science (BS)//[4.0'gender'a', 2.0'available times'2:01234:2:2:2:01234:2', 1.0'location to meet'jfmedo', 3.0'study techniques'fplo']//[CS 112, CS 211, CS 222, CS 262, CS 306, CS 310, CS 499]//2//[]//[]//[]//[]\n");
-            accountWriter.write("TestName4//TestAccount4//test//test4@example.com//9999999999//Computer Science (BS)//[4.0'gender'a', 2.0'available times'2:01234:2:2:2:01234:2', 1.0'location to meet'jfmedo', 3.0'study techniques'fplo']//[CS 112, CS 211, CS 222, CS 262, CS 306, CS 310, CS 499]//2//[]//[]//[]//[]\n");
+            accountWriter.write("");
+//            accountWriter.write("TestName//TestAccount//test//test@example.com//1234567890//Computer Science (BS)//[4.0'gender'a', 2.0'available times'2:01234:2:2:2:01234:2', 1.0'location to meet'jfmedo', 3.0'study techniques'fplo']//[CS 112, CS 211, CS 222, CS 262, CS 306, CS 310, CS 499]//2//[]//[]//[]//[]\n");
+//            accountWriter.write("TestName2//TestAccount2//test//test2@example.com//0987654321//Computer Science (BS)//[4.0'gender'a', 2.0'available times'2:01234:2:2:2:01234:2', 1.0'location to meet'jfmedo', 3.0'study techniques'fplo']//[CS 112, CS 211, CS 222, CS 262, CS 306, CS 310, CS 499]//2//[]//[]//[]//[]\n");
+//            accountWriter.write("TestName3//TestAccount3//test//test3@example.com//0000000000//Computer Science (BS)//[4.0'gender'a', 2.0'available times'2:01234:2:2:2:01234:2', 1.0'location to meet'jfmedo', 3.0'study techniques'fplo']//[CS 112, CS 211, CS 222, CS 262, CS 306, CS 310, CS 499]//2//[]//[]//[]//[]\n");
+//            accountWriter.write("TestName4//TestAccount4//test//test4@example.com//9999999999//Computer Science (BS)//[4.0'gender'a', 2.0'available times'2:01234:2:2:2:01234:2', 1.0'location to meet'jfmedo', 3.0'study techniques'fplo']//[CS 112, CS 211, CS 222, CS 262, CS 306, CS 310, CS 499]//2//[]//[]//[]//[]\n");
             accountWriter.close();
         }
         catch (IOException e) {
